@@ -1,0 +1,43 @@
+.btn-themed-primary{
+    background-image: linear-gradient(to right bottom, #1154b1, #1858b8, #1d5dbf, #2361c7, #2866ce);
+    color: white;
+}
+
+.btn-themed-success{
+    background-image: linear-gradient(to left top, #60f146, #5bef4d, #56ec54, #51ea5a, #4de760);
+    /*background-image: linear-gradient(to right bottom, #40c864, #37c86e, #2dc878, #24c881, #1cc88a);*/
+    color: white;
+}
+
+.btn-themed-danger{
+    background-image: linear-gradient(to left top, #f1465a, #ed425b, #e93f5c, #e53b5c, #e1385d);
+    /*background-image: linear-gradient(to left top, #f14646, #ed4246, #e93f46, #e53b46, #e13846);*/
+    color: white;
+}
+
+.btn-themed-info{
+    background-image: linear-gradient(to right bottom, #2ec8e1, #2fcae0, #31ccde, #34cedd, #37d0db);
+    color: white
+}
+
+.btn-themed-warning{
+    background-image: linear-gradient(to right bottom, #f6c23e, #f7cb3d, #f7d43d, #f7dd3d, #f6e63e);
+    color: white
+}
+
+.btn-themed-violet{
+    background-image: linear-gradient(to right bottom, #9b87da, #a380e4, #ad77ec, #ba6cf2, #c95ef6);
+    color: white
+}
+
+
+
+
+/* 
+blueish - #4e73df
+greenish - #1cc88a
+reddish - #F14646
+infoish - #36b9cc
+yellowish - #f6c23e
+purplish - #8c7dbb
+*/

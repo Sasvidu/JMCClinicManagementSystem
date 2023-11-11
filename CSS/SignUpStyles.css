@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@300;400;500&display=swap');
+
+@keyframes ColorChange {
+    from{
+        background-position: left;
+    }
+    to{
+        background-position: right;
+    }
+}
+
+body{
+    background-image: linear-gradient(to right, #0e0e44, #171955, #1f2466, #272f78, #2f3b8b, #294fa1, #1d63b6, #0077ca, #0097df, #00b6ec, #00d3f3, #50f0f6);
+    background-size: 300%;
+    animation: ColorChange 40s infinite alternate;
+}
+
+.flexer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto Slab', serif;
+    padding-bottom: 0;
+}
+
+.panel{
+    box-shadow: 0 0 0.1em white; 
+    background-color: white;
+    border: 2px solid #FFF; 
+    border-radius: 3rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 5rem; 
+    margin-left: 1.5rem;
+    width: 100%;
+}
+
+.panel-heading{
+    font-family: 'Montserrat', serif;
+}
+
+.panel-body{
+    font-family: 'Montserrat', serif;
+}
+
+.form-control{
+    color: rgba(0, 0, 0, 0.87);
+    box-shadow: none !important;
+    border: none;
+    border-bottom: 1px solid;
+    border-bottom-color: rgba(0, 0, 0, 0.42);
+    border-radius: 4px 4px 0 0;
+}
+
+.btn-submit{
+    background-image: linear-gradient(45deg, #0e0e44, #171955, #1f2466, #272f78, #2f3b8b, #294fa1, #1d63b6, #0077ca, #0097df, #00b6ec, #00d3f3, #50f0f6);
+    color: rgb(204, 204, 204);
+    width: 100%;
+    border: none; 
+    border-radius: 3rem;
+    background-size: 200%;
+    background-position: left;
+    animation: ColorChange 40s infinite alternate;
+}
+
+.btn-submit:hover{
+    color: white;
+    font-weight: 500;
+    font-style: bold;
+}
+
+.btn-home{
+    height: 4rem;
+    width: 4rem;
+    color: black;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 50%;
+}
+
+#div-home{
+    position: fixed;
+    top: 45%;
+    left: 2%;
+}
+
+#eye-icon1, #eye-icon2{
+    position: absolute;
+    left: 70%;
+}
+
+

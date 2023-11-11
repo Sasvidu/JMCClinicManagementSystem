@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@300;400;500&display=swap');
+
+/*Animations:*/
+@keyframes PanelTranslation {
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(30px);
+    }
+}
+
+@keyframes IconTranslationLogin {
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(35px);
+    }
+}
+
+@keyframes TextRemoval {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes IconTranslationSignUp {
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(47px);
+    }
+}
+
+.animatedPanel{
+    animation: PanelTranslation 500ms ease-out 0ms 1 normal both;
+}
+
+.animatedIconLogin{
+    animation: IconTranslationLogin 500ms ease-out 0ms 1 normal both;
+}
+
+.deAnimatedIconLogin{
+    animation: IconTranslationLogin 500ms ease-out 0ms 1 reverse both;
+}
+
+.animatedText{
+    animation: TextRemoval 500ms ease-in 0ms 1 normal both;
+}
+
+.deAnimatedText{
+    animation: TextRemoval 500ms ease-in 0ms 1 reverse both;
+}
+
+.animatedIconSignUp{
+    animation: IconTranslationSignUp 500ms ease-out 0ms 1 normal both;
+}
+
+.deAnimatedIconSignUp{
+    animation: IconTranslationSignUp 500ms ease-out 0ms 1 reverse both;
+}
+
+
+/*Navbar:*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    padding-top: 1.2%;
+    padding-bottom: 1.2%;
+    padding-left: 30px;
+}
+
+.logo{
+    cursor:pointer;
+}
+
+.navbar-brand-text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    font-style: bold;
+}
+
+.collapseditems{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navLinks{
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.navLinks li{
+    display: inline-block;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* .navLinks li a button{
+    transition: all 0.3s ease 0s;
+}
+
+.navLinks li a button:hover{
+    color: blue;
+} */
+
+.btnToTxtLogin{
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    color: #edf0f1;
+    background-color:#21c5de;
+    margin: -10px;
+    transition: all 300ms ease 0ms;
+
+}
+
+.btnToTxtLogin:hover{
+
+    color: #21c5de;
+    background-color:white;
+    border-color:#21c5de;
+
+}
+
+.btnToTxtSignUp{
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    color: #21c5de;
+    background-color:white;
+    border-color:#21c5de;
+    margin: -10px;
+    transition: all 300ms ease 0ms;
+
+}
+
+.btnToTxtSignUp:hover{
+
+    background-color: #21c5de;
+    color: white;
+    border-color: #21c5de;
+
+}
+
+
+/*Body:*/
+body{
+    overflow-x: hidden;
+}
+
+.flexer{
+    display: flex;
+    justify-content: center;
+}
+
+.welcome-panel{
+    box-shadow: 0 0 2em #c0c0c0; 
+    background-color: aliceblue;
+    border: 2px solid #FFF; 
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 5rem; 
+    margin-left: 1.5rem;
+    width: 32.5rem;
+}
+
+.welcome-heading{
+    font-family: 'Roboto Slab', serif;
+}
+
+.appointment-text{
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: aqua;
+    transition: all 300ms ease 0ms;
+}
+
+.appointment-text:hover{
+    color: aqua;
+    text-decoration: none;
+}
+
+.welcome-badge{
+    background-color: aqua;
+    color: black;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.welcome-badge:hover{
+    color: grey;
+}
+
+.btn-login{
+    background-color: #21c5de;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    font-style: bold;
+    height: 55px;
+    width: 52%;
+    transition: all 500ms ease;
+}
+
+.btn-login:hover{
+    background-color: white;
+    color: #21c5de;
+    font-weight: bolder;
+    font-size: larger;
+    border-color: #21c5de;
+    border-radius: 2rem;
+    box-shadow: 0 0 0.5rem 0.15rem #21c5de;
+}
+
+.btn-signup{
+    border-color: #21c5de;
+    background-color: white;
+    color: #21c5de;
+    font-family: 'Roboto Slab', serif;
+    font-style: bold;
+    height: 55px;
+    width: 52%;
+    transition: all 500ms ease;
+}
+
+.btn-signup:hover{
+    background-color: #21c5de;
+    color: white;
+    font-weight: bolder;
+    font-size: larger;
+    border-color: #21c5de;
+    border-radius: 2rem;
+}
+
+.About-Heading{
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: aqua;
+    transition: all 200ms ease-out 0ms;
+}
+
+.card{
+    border: none;
+}
+
+.cardImage{
+    width: 200px;
+    height: 200px;
+    align-self: center;
+    margin: 10px;
+}
+
+.card-title{
+    font-family: nunito;
+    font-weight: 900;
+    font-style: bold;
+    text-align: center;
+}
+
+.card-text{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+#Intro-panel{
+    background-image: url("../Commons/Images/Home1.jpg");
+    background-size: cover;
+    height: 80vh;
+    background-position: 50% 35%;
+    width: 120%;
+    position: relative;
+}
+
+
+/*Scroll Animations:*/
+.hidden{
+    opacity: 0;
+    transition: all 1000ms ease-out;
+    filter: blur(3px);
+    transform: translateY(100%);
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.btn-half-primary{
+    background-color:white;
+    border-color: rgba(23, 23, 197, 0.93);
+    color: rgba(23, 23, 197, 0.93);
+    transition: all 300ms ease 0ms;
+
+    //transition-property: transform;
+    //transition-duration: 0.3s;
+    //transition-timing-function: ease;
+    //transition-delay: 0s;
+}
+
+
+.btn-half-primary:hover{
+    transform: translateY(-10px);
+    background-color:blue;
+    border-color: blue;
+    color: white;
+}
+*/

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.title-text{
+    font-size: 3rem;
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    top: 0.8%;
+}
+
+.flexer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .dashboard-item{
+    animation: RibbonItemsAnimation 1000ms ease-out 0ms 1 normal both;
+} */
+
+.dashboard-image{
+    height: 80px;
+    width: auto;
+}
+
+.dashboard-item-image{
+    height: 2.5rem;
+    width: auto;
+}
+
+.dashboard-selected-item{
+    font-weight: 800;
+    font-style: bold;
+}
+
+.dashboard-selectable-item{
+    transition: 750ms;
+}
+
+.dashboard-selectable-item:hover{
+    transform: translateX(15px);
+    transition: 250ms;
+}
+
+.dashboard-btn{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    color: white;
+}
+
+.title-welcome{
+    position: absolute;
+    top: 3.3%;
+    right: 7.5%;
+    font-family: 'Roboto Slab', serif;
+}
+
+.title-role{
+    position: absolute;
+    top: 2.3%;
+    right: 1.5%;
+    background-image: linear-gradient(to right, #0e0e44, #171955, #1f2466, #272f78, #2f3b8b, #294fa1, #1d63b6, #0077ca, #0097df, #00b6ec, #00d3f3, #50f0f6);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 1rem;
+    color: rgb(204, 204, 204);
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    font-size: 15px;
+    transition: all 300ms ease;
+}
+
+.title-role:hover{
+    color: white;
+    font-weight: 500;
+    font-style: bold;
+}

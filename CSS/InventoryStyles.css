@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500");
+
+.paginationNav {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0.9rem;
+}
+
+.limitSelect {
+  width: auto;
+  margin: 0;
+}
+
+.limitSelectForm {
+  margin-bottom: 2rem;
+}
+
+.searchbar {
+  position: absolute;
+  right: 1rem;
+}
+
+.btn-add-stock {
+  position: absolute;
+  right: 39%;
+}
+
+table {
+  table-layout: auto;
+}
+
+td,
+th {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#Action {
+  width: 5%;
+}
