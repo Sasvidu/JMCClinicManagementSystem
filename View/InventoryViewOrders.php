@@ -1,7 +1,7 @@
 <?php
 
 require_once "../Model/Session.php";
-require_once "../Model/InventoryInitializationModel.php"
+require_once "../Model/InventoryVIewOrdersInitializationModel.php";
 
 ?>
 
@@ -82,7 +82,7 @@ require_once "../Model/InventoryInitializationModel.php"
 
                         <div class="col-12 dashboard-item dashboard-selectable-item">
 
-                        <button name="dashboard-submit" value="dashboard-submit-medicine" type="submit" class="dashboard-btn">
+                            <button name="dashboard-submit" value="dashboard-submit-medicine" type="submit" class="dashboard-btn">
                                 <img src="../Commons/icons/bg-removed/medicine-whitepng.png" class="dashboard-item-image">
                                 <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Medicine</span>
                             </button>
@@ -93,10 +93,12 @@ require_once "../Model/InventoryInitializationModel.php"
                             &nbsp;
                         </div>
 
-                        <div class="col-12 dashboard-item dashboard-selected-item">
+                        <div class="col-12 dashboard-item dashboard-selectable-item">
 
-                            <img src="../Commons/icons/bg-removed/inventory-white.png" class="dashboard-item-image">
-                            <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Inventory</span>
+                            <button name="dashboard-submit" value="dashboard-submit-inventory" type="submit" class="dashboard-btn">
+                                <img src="../Commons/icons/bg-removed/inventory-white.png" class="dashboard-item-image">
+                                <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Inventory</span>
+                            </button>
 
                         </div>
 
@@ -226,42 +228,45 @@ require_once "../Model/InventoryInitializationModel.php"
                     <div class="col-12 main-content">
 
                         <div class="row">
-
                             <div class="col-12">
-                                &nbsp;
+                                <h2 class="TitleTxt">View Orders</h2>
                             </div>
-
                         </div>
 
                         <div class="row">
-
-                            <div class="col-8">
+                            <div class="col-9">
 
                                 <nav class="paginationNav">
                                     <ul class="pagination">
 
                                         <li class="page-item">
-                                            <a class="page-link" href="Inventory.php?page=1">First</a>
+                                            <a class="page-link" href="InventoryManageOrders.php?page=1">First</a>
                                         </li>
 
-                                        <li class="page-item <?php if ($page == 1 || $page == 0) {echo "disabled";} ?>">
-                                            <a class="page-link" href="Inventory.php?page=<?php echo $previous; ?>">Previous</a>
+                                        <li class="page-item <?php if ($page == 1 || $page == 0) {
+                                                                    echo "disabled";
+                                                                } ?>">
+                                            <a class="page-link" href="InventoryManageOrders.php?page=<?php echo $previous; ?>">Previous</a>
                                         </li>
 
                                         <?php for ($i = 1; $i <= $pages; $i++) { ?>
 
-                                            <li class="page-item<?php if ($i == $page) {echo " active";} ?>">
-                                                <a class="page-link" href="Inventory.php?page=<?php echo $i; ?>"> <?php echo $i; ?> </a>
+                                            <li class="page-item<?php if ($i == $page) {
+                                                                    echo " active";
+                                                                } ?>">
+                                                <a class="page-link" href="InventoryManageOrders.php?page=<?php echo $i; ?>"> <?php echo $i; ?> </a>
                                             </li>
 
                                         <?php } ?>
 
-                                        <li class="page-item <?php if ($page == $pages || $page == 0) {echo "disabled";} ?>">
-                                            <a class="page-link" href="Inventory.php?page=<?php echo $next; ?>">Next</a>
+                                        <li class="page-item <?php if ($page == $pages || $page == 0) {
+                                                                    echo "disabled";
+                                                                } ?>">
+                                            <a class="page-link" href="InventoryManageOrders.php?page=<?php echo $next; ?>">Next</a>
                                         </li>
 
                                         <li class="page-item">
-                                            <a class="page-link" href="Inventory.php?page=<?php echo $pages; ?>">Last</a>
+                                            <a class="page-link" href="InventoryManageOrders.php?page=<?php echo $pages; ?>">Last</a>
                                         </li>
 
                                     </ul>
@@ -269,29 +274,15 @@ require_once "../Model/InventoryInitializationModel.php"
 
                             </div>
 
-                            <div class="col-1">
-                                <button type="button" class="btn btn-block btn-themed-success btn-add-stock" name="addStockButton" id="addStockButton" data-toggle="modal" data-target="#AddStockModal"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Add Stock</button>
-                            </div>
-
-                            <div class="col-1">
-                                <button type="button" class="btn btn-block btn-themed-primary btn-place-order" name="viewOrderButton" id="viewOrderButton"><i class="fa-solid fa-list"></i>&nbsp;&nbsp;<a class="btn-place-order-link" href="InventoryViewOrders.php">View Orders</a></button>
-                            </div>
-
-                            <div class="col-2 searchbar">
+                            <div class="col-3">
                                 <form action="" method="get">
                                     <div class="input-group mb-3">
-                                        <input id="search" name="search" value="<?php if (isset($_GET["search"])) {echo $_GET["search"];} ?>" type="text" class="form-control" placeholder="Search for data">
-                                        <button type="submit" class="btn btn-themed-primary">Search</button>
+                                        <input id="search" name="search" value="<?php if (isset($_GET["search"])) {
+                                                                                    echo $_GET["search"];
+                                                                                } ?>" type="text" class="form-control" placeholder="Search for data">
+                                        <button type="submit" class="btn btn-primary">Search</button>
                                     </div>
                                 </form>
-                            </div>
-
-                        </div>
-
-                        <div class="row">
-
-                            <div class="col-12">
-                                &nbsp;
                             </div>
 
                         </div>
@@ -303,41 +294,35 @@ require_once "../Model/InventoryInitializationModel.php"
 
                                     <thead>
                                         <tr>
-                                            <th scope="col">Id</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Batch No.</th>
-                                            <th scope="col">Company</th>
-                                            <th scope="col">Category</th>
-                                            <th scope="col">Current Qty</th>
-                                            <th scope="col">Max Qty</th>
-                                            <th scope="col">Buffer Qty</th>
-                                            <th scope="col">Last Updated Date</th>
-                                            <th scope="col">Created Date</th>
-                                            <th scope="th-sm" id="Action">Action</th>
+                                            <th scope="col">Order Id</th>
+                                            <th scope="col">Medicine Data</th>
+                                            <th scope="col">Supplier Name</th>
+                                            <th scope="col">Order Date</th>
+                                            <th scope="col">Order Quantity</th>
+                                            <th scope="col">Order Price</th>
+                                            <th scope="col">Payment Made</th>
+                                            <th scope="th-sm">Action</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
 
-                                        <?php foreach ($stocks as $stock) { ?>
-                                            <tr>
-                                                <th scope="row"><?php echo $stock['stock_id']; ?></th>
-                                                <td id="MedicineName<?php echo $stock['stock_id']; ?>"> <?php echo $stock['medicine_name']; ?></td>
-                                                <td id="MedicineBatch<?php echo $stock['stock_id']; ?>"> <?php echo $stock['medicine_batch_no']; ?></td>
-                                                <td id="MedicineCompany<?php echo $stock['stock_id']; ?>"> <?php echo $stock['medicine_company']; ?></td>
-                                                <td id="MedicineCategory<?php echo $stock['stock_id']; ?>"> <?php echo $stock['medicine_category']; ?></td>
-                                                <td id="StockCurrent<?php echo $stock['stock_id']; ?>"> <?php echo $stock['stock_qty_current']; ?></td>
-                                                <td id="StockMax<?php echo $stock['stock_id']; ?>"> <?php echo $stock['stock_qty_max']; ?></td>
-                                                <td id="StockBuffer<?php echo $stock['stock_id']; ?>"> <?php echo $stock['stock_qty_buffer']; ?></td>
-                                                <td id="StockUpdatedDate<?php echo $stock['stock_id']; ?>"> <?php echo $stock['stock_updated_date']; ?></td>
-                                                <td id="StockCreatedDate<?php echo $stock['stock_id']; ?>"> <?php echo $stock['stock_created_date']; ?></td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-success" name="orderButton" id="order<?php echo $stock['stock_id'] ?>" onclick="openOrderModal(this.id)"><i class="fa-solid fa-box-open"></i>&nbsp;Order</button>
-                                                    <button type="button" class="btn btn-sm btn-themed-info" name="editButton" id="edit<?php echo $stock['stock_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
-                                                    <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $stock['stock_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
-                                                </td>
-                                            </tr>
-                                        <?php } ?>
+                                        <form action="InventoryOrderReport.php?status=true" method="post">
+                                            <?php foreach ($orders as $order) { ?>
+                                                <tr>
+                                                    <th scope="row"><?php echo $order['order_id'] ?></th>
+                                                    <td id="MedicineName<?php echo $order['order_id'] ?>"> <?php echo $order['medicine_name'] . ", " . $order['medicine_batch_no'] . ", " . $order['medicine_company'] . ", " . $order['medicine_category'] ?></td>
+                                                    <td id="SupplierName<?php echo $order['order_id'] ?>"><?php echo $order['supplier_name'] ?></td>
+                                                    <td id="Date<?php echo $order['order_id'] ?>"><?php echo $order['order_date'] ?></td>
+                                                    <td id="Qty<?php echo $order['order_id'] ?>"><?php echo $order['order_qty'] ?></td>
+                                                    <td id="Payment<?php echo $order['order_id'] ?>"><?php echo $order['order_price'] ?></td>
+                                                    <td id="PaymentMade<?php echo $order['order_id'] ?>"><?php echo $order['order_completed_payment'] ?></td>
+                                                    <td>
+                                                        <button type="submit" formtarget="_blank" class="btn btn-sm btn-success" name="invoiceButton" id="invoice-<?php echo $order['order_id'] ?>" value="invoice-<?php echo $order['order_id'] ?>"><i class="fa-solid fa-file-invoice"></i>&nbsp;&nbsp;Receipt</button>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                        </form>
 
                                     </tbody>
 
@@ -375,15 +360,6 @@ require_once "../Model/InventoryInitializationModel.php"
 
     <!-- Modals -->
 
-    <?php
-
-        include_once "InventoryAddStockModal.php";
-        include_once "InventoryEditStockModal.php";
-        include_once "InventoryDeleteStockModal.php";
-        include_once "InventoryPlaceOrderModal.php";
-
-    ?>
-
     <!-- Modals end-->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -403,3 +379,7 @@ require_once "../Model/InventoryInitializationModel.php"
 
 
 </html>
+
+
+
+

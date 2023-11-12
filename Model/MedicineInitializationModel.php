@@ -1,6 +1,6 @@
 <?php
 
-require_once "../Commons/JeevaniDB.php";
+    require_once "../Commons/JeevaniDB.php";
     $thisDBConnection = new DbConnection();
     $myCon = $thisDBConnection->con;
     
