@@ -22,7 +22,14 @@
 
 .btn-add-stock {
   position: absolute;
-  right: 39%;
+  right: 42%;
+}
+
+.btn-place-order {
+  position: absolute;
+  right: 33%;
+  display: flex;
+  align-items: center;
 }
 
 table {

@@ -76,6 +76,18 @@ function openDeleteModal(id) {
   });
 }
 
+function openOrderModal(id) {
+  $(document).ready(function () {
+    //Extract the data of specific stock:
+    var fields = id.split("r");
+    var medicineId = fields[2];
+
+    //Open the delete stock model and set its field values to one's read from the stock record:
+    $("#PlaceOrderModal").modal();
+    $(".modal-body #MedicineId").val(medicineId);
+  });
+}
+
 //Convert the date format to the one used by the date time picker in the modal:
 function formatDate(date) {
   var d = new Date(date),

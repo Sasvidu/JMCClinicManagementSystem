@@ -67,6 +67,14 @@
 
                     <!--Display empty row when when message is not available -->
 
+                    <div class="col-12">
+                        &nbsp;
+                    </div>
+                    
+                    <div class="col-12">
+                        &nbsp;
+                    </div>
+
                 <?php
             }
             ?>

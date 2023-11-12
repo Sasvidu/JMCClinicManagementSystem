@@ -273,7 +273,11 @@ require_once "../Model/InventoryInitializationModel.php"
                                 <button type="button" class="btn btn-block btn-themed-success btn-add-stock" name="addStockButton" id="addStockButton" data-toggle="modal" data-target="#AddStockModal"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Add Stock</button>
                             </div>
 
-                            <div class="col-3 searchbar">
+                            <div class="col-1">
+                                <button type="button" class="btn btn-block btn-themed-success btn-place-order" name="viewOrderButton" id="viewOrderButton"><i class="fa-solid fa-list"></i>&nbsp;&nbsp;View Orders</button>
+                            </div>
+
+                            <div class="col-2 searchbar">
                                 <form action="" method="get">
                                     <div class="input-group mb-3">
                                         <input id="search" name="search" value="<?php if (isset($_GET["search"])) {echo $_GET["search"];} ?>" type="text" class="form-control" placeholder="Search for data">
@@ -328,8 +332,9 @@ require_once "../Model/InventoryInitializationModel.php"
                                                 <td id="StockUpdatedDate<?php echo $stock['stock_id']; ?>"> <?php echo $stock['stock_updated_date']; ?></td>
                                                 <td id="StockCreatedDate<?php echo $stock['stock_id']; ?>"> <?php echo $stock['stock_created_date']; ?></td>
                                                 <td>
-                                                    <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $stock['stock_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
+                                                    <button type="button" class="btn btn-sm btn-success" name="orderButton" id="order<?php echo $stock['stock_id'] ?>" onclick="openOrderModal(this.id)"><i class="fa-solid fa-box-open"></i>&nbsp;Order</button>
                                                     <button type="button" class="btn btn-sm btn-themed-info" name="editButton" id="edit<?php echo $stock['stock_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
+                                                    <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $stock['stock_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -375,6 +380,7 @@ require_once "../Model/InventoryInitializationModel.php"
         include_once "InventoryAddStockModal.php";
         include_once "InventoryEditStockModal.php";
         include_once "InventoryDeleteStockModal.php";
+        include_once "InventoryPlaceOrderModal.php";
 
     ?>
 

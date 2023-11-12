@@ -24,6 +24,10 @@
                         </div>
 
                         <div class="col-12">
+                            &nbsp;
+                        </div>
+
+                        <div class="col-12">
                             <p align="center" style="font-size:larger">Are you sure you want to delete this stock?</p>
                         </div>
 
@@ -33,11 +37,13 @@
 
                     </div>
 
-                    <!-- Confirmation buttons -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
-                        <button type="submit" class="btn btn-danger">Yes</button>
-                    </div>
+                </div>
+
+                <!-- Confirmation buttons -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-danger">Yes</button>
+                </div>
 
             </form>
 
