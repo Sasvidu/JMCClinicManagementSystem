@@ -20,38 +20,9 @@
   right: 1rem;
 }
 
-.btn-add-stock {
+.btn-add-supplier {
   position: absolute;
-  right: 42%;
-}
-
-.btn-view-order {
-  position: absolute;
-  right: 33%;
-  display: flex;
-  align-items: center;
-}
-
-.btn-view-order-link {
-  text-decoration: none;
-  color: white;
-}
-
-.btn-view-order-link:hover {
-  text-decoration: none;
-  color: black;
-}
-
-.btn-success:hover {
-  color: black;
-}
-
-.TitleTxt {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  right: 39%;
 }
 
 table {

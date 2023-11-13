@@ -48,6 +48,8 @@
             header("location: ../View/Medicine.php");
         }else if($action == "dashboard-submit-inventory"){
             header("location: ../View/Inventory.php");
+        }else if($action == "dashboard-submit-suppliers"){
+            header("location: ../View/Suppliers.php");
         }else{
 
             //If the action is not defined, go back to home page:

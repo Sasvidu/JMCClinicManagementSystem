@@ -82,7 +82,7 @@ require_once "../Model/InventoryInitializationModel.php"
 
                         <div class="col-12 dashboard-item dashboard-selectable-item">
 
-                        <button name="dashboard-submit" value="dashboard-submit-medicine" type="submit" class="dashboard-btn">
+                            <button name="dashboard-submit" value="dashboard-submit-medicine" type="submit" class="dashboard-btn">
                                 <img src="../Commons/icons/bg-removed/medicine-whitepng.png" class="dashboard-item-image">
                                 <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Medicine</span>
                             </button>
@@ -274,7 +274,7 @@ require_once "../Model/InventoryInitializationModel.php"
                             </div>
 
                             <div class="col-1">
-                                <button type="button" class="btn btn-block btn-themed-primary btn-place-order" name="viewOrderButton" id="viewOrderButton"><i class="fa-solid fa-list"></i>&nbsp;&nbsp;<a class="btn-place-order-link" href="InventoryViewOrders.php">View Orders</a></button>
+                                <button type="button" class="btn btn-block btn-themed-primary btn-view-order" name="viewOrderButton" id="viewOrderButton"><i class="fa-solid fa-list"></i>&nbsp;&nbsp;<a class="btn-view-order-link" href="InventoryViewOrders.php">View Orders</a></button>
                             </div>
 
                             <div class="col-2 searchbar">

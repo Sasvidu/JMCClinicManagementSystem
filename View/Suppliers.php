@@ -1,6 +1,7 @@
 <?php
 
 require_once "../Model/Session.php";
+require_once "../Model/SuppliersInitializationModel.php";
 
 ?>
 
@@ -18,14 +19,15 @@ require_once "../Model/Session.php";
     <link rel="stylesheet" type="text/css" href="../bootstrap/bootstrap-5.0.2-dist/css/bootstrap.min.css">
 
     <!--Link Original Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="../CSS/SuppliersStyles.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/AdminDashboardStyles.css">
     <link rel="stylesheet" type="text/css" href="../CSS/CommonDashboardStyles.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Utilities.css">
 
     <!--Link to Original Script -->
-    <script defer src="../JS/AdminDashboardJS.js"></script>
+    <script defer src="../JS/SuplliersJS.js"></script>
 
-     <!--Link to fontawesome icons -->
+    <!--Link to fontawesome icons -->
     <script src="https://kit.fontawesome.com/0c49cb8566.js" crossorigin="anonymous"></script>
 
 </head>
@@ -59,10 +61,12 @@ require_once "../Model/Session.php";
 
                     <div class="row">
 
-                        <div class="col-12 dashboard-item dashboard-selected-item" style="padding-top: 0.5rem; padding-bottom: 0.2rem">
+                        <div class="col-12 dashboard-item  dashboard-selectable-item" style="padding-top: 0.5rem; padding-bottom: 0.2rem">
                         
-                            <img src="../Commons/icons/bg-removed/dashboard-white.png" class="dashboard-item-image">
-                            <span>&nbsp;&nbsp;&nbsp;Dashboard</span>
+                            <button name="dashboard-submit" value="dashboard-submit-dashboard" type="submit" class="dashboard-btn">
+                                <img src="../Commons/icons/bg-removed/dashboard-white.png" class="dashboard-item-image">
+                                <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Dashboard</span>
+                            </button>    
 
                         </div>
 
@@ -102,12 +106,10 @@ require_once "../Model/Session.php";
                             &nbsp;
                         </div>
 
-                        <div class="col-12 dashboard-item dashboard-selectable-item">
+                        <div class="col-12 dashboard-item dashboard-selected-item">
 
-                            <button name="dashboard-submit" value="dashboard-submit-suppliers" type="submit" class="dashboard-btn">
-                                <img src="../Commons/icons/bg-removed/supplier-white.png" class="dashboard-item-image">
-                                <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Suppliers</span>
-                            </button>
+                            <img src="../Commons/icons/bg-removed/supplier-white.png" class="dashboard-item-image">
+                            <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Suppliers</span>
 
                         </div>
 
@@ -223,17 +225,128 @@ require_once "../Model/Session.php";
 
                     <div class="col-12 main-content">
 
-                        <button type="button" class="btn btn-block btn-themed-primary">Try Clicking Me</button>
+                        <div class="row">
 
-                        <button type="button" class="btn btn-block btn-themed-success">Try Clicking Me</button>
+                            <div class="col-12">
+                                &nbsp;
+                            </div>
 
-                        <button type="button" class="btn btn-block btn-themed-danger">Try Clicking Me</button>
+                        </div>
 
-                        <button type="button" class="btn btn-block btn-themed-info">Try Clicking Me</button>
+                        <div class="row">
 
-                        <button type="button" class="btn btn-block btn-themed-warning">Try Clicking Me</button>
+                            <div class="col-8">
 
-                        <button type="button" class="btn btn-block btn-themed-violet">Try Clicking Me</button>
+                                <nav class="paginationNav">
+                                    <ul class="pagination">
+
+                                        <li class="page-item">
+                                            <a class="page-link" href="Medicine.php?page=1">First</a>
+                                        </li>
+
+                                        <li class="page-item <?php if ($page == 1 || $page == 0) {echo "disabled";} ?>">
+                                            <a class="page-link" href="Medicine.php?page=<?php echo $previous; ?>">Previous</a>
+                                        </li>
+
+                                        <?php for ($i = 1; $i <= $pages; $i++) { ?>
+
+                                            <li class="page-item<?php if ($i == $page) {echo " active";} ?>">
+                                                <a class="page-link" href="Medicine.php?page=<?php echo $i; ?>"> <?php echo $i; ?> </a>
+                                            </li>
+
+                                        <?php } ?>
+
+                                        <li class="page-item <?php if ($page == $pages || $page == 0) {echo "disabled";} ?>">
+                                            <a class="page-link" href="Medicine.php?page=<?php echo $next; ?>">Next</a>
+                                        </li>
+
+                                        <li class="page-item">
+                                            <a class="page-link" href="Medicine.php?page=<?php echo $pages; ?>">Last</a>
+                                        </li>
+
+                                    </ul>
+                                </nav>
+
+                            </div>
+
+                            <div class="col-1">
+                                <button type="button" class="btn btn-block btn-themed-success btn-add-supplier" name="addSupplierButton" id="addSupplierButton" data-toggle="modal" data-target="#AddSupplierModal"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Add Supplier</button>
+                            </div>
+
+                            <div class="col-3 searchbar">
+                                <form action="" method="get">
+                                    <div class="input-group mb-3">
+                                        <input id="search" name="search" value="<?php if (isset($_GET["search"])) {echo $_GET["search"];} ?>" type="text" class="form-control" placeholder="Search for data">
+                                        <button type="submit" class="btn btn-themed-primary">Search</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-12">
+                                &nbsp;
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+
+                            <table class="table table-striped table-hover table-bordered table-responsive">
+
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Origin</th>
+                                        <th scope="col">Specialisation</th>
+                                        <th scope="col">Pending Payment</th>
+                                        <th scope="th-sm" id="Action">Action</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    <?php foreach ($suppliers as $supplier) { ?>
+                                        <tr>
+                                            <th scope="row"><?php echo $supplier['supplier_id']; ?></th>
+                                            <td id="SupplierName<?php echo $supplier['supplier_id']; ?>"> <?php echo $supplier['supplier_name']; ?></td>
+                                            <td id="SupplierOrigin<?php echo $supplier['supplier_id']; ?>"> <?php echo $supplier['supplier_origin']; ?></td>
+                                            <td id="SupplierSpecialisation<?php echo $supplier['supplier_id']; ?>"> <?php echo $supplier['supplier_specialisation']; ?></td>
+                                            <td id="SupplierPendingPayment<?php echo $supplier['supplier_id']; ?>"> <?php echo $supplier['supplier_pending_payment']; ?></td>
+                                            <td>
+                                                <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $supplier['supplier_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
+                                                <button type="button" class="btn btn-sm btn-themed-info" name="editButton" id="edit<?php echo $supplier['supplier_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+
+                                </tbody>
+
+                            </table>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <form action="#" method="post" class="limitSelectForm">
+
+                                <label>Records per page:</label>
+                                <select id="limitSelector" name="limitSelector" class="form-select limitSelect" onchange="changeLimits()">
+                                    <option <?php if($limit == 5){ echo "selected"; } ?> value="5">5</option>
+                                    <option <?php if($limit == 10){ echo "selected"; } ?> value="10">10</option>
+                                    <option <?php if($limit == 20){ echo "selected"; } ?> value="20">20</option>
+                                    <option <?php if($limit == 50){ echo "selected"; } ?> value="50">50</option>
+                                    <option <?php if($limit == 100){ echo "selected"; } ?> value="100">100</option>
+                                </select>
+
+                            </form>
+
+                        </div>
 
                     </div>
 
@@ -245,10 +358,31 @@ require_once "../Model/Session.php";
 
     </div>
 
+    <!-- Modals -->
+
+    <?php
+
+        include_once "MedicineAddMedicineModal.php";
+        include_once "MedicineEditMedicineModal.php";
+        include_once "MedicineDeleteMedicineModal.php";
+
+    ?>
+
+    <!-- Modals end-->
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
+
+    <?php
+
+    if (isset($_GET['msg'])) {
+        $msg = base64_decode($_GET['msg']);
+        echo "<script type='text/javascript'>alert('$msg');</script>";
+    }
+
+    ?>
+
 </body>
 
 
