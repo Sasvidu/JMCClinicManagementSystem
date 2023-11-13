@@ -44,7 +44,7 @@ if (isset($_GET["search"])) {
     } else {
         $msg = "No records have been read from the database";
         $msg = base64_encode($msg);
-        header("location: ../View/Inventory.php?msg=$msg");
+        header("location: ../View/InventoryViewOrders.php?msg=$msg");
         exit();
     }
 

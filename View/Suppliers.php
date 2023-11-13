@@ -241,27 +241,27 @@ require_once "../Model/SuppliersInitializationModel.php";
                                     <ul class="pagination">
 
                                         <li class="page-item">
-                                            <a class="page-link" href="Medicine.php?page=1">First</a>
+                                            <a class="page-link" href="Suppliers.php?page=1">First</a>
                                         </li>
 
                                         <li class="page-item <?php if ($page == 1 || $page == 0) {echo "disabled";} ?>">
-                                            <a class="page-link" href="Medicine.php?page=<?php echo $previous; ?>">Previous</a>
+                                            <a class="page-link" href="Suppliers.php?page=<?php echo $previous; ?>">Previous</a>
                                         </li>
 
                                         <?php for ($i = 1; $i <= $pages; $i++) { ?>
 
                                             <li class="page-item<?php if ($i == $page) {echo " active";} ?>">
-                                                <a class="page-link" href="Medicine.php?page=<?php echo $i; ?>"> <?php echo $i; ?> </a>
+                                                <a class="page-link" href="Suppliers.php?page=<?php echo $i; ?>"> <?php echo $i; ?> </a>
                                             </li>
 
                                         <?php } ?>
 
                                         <li class="page-item <?php if ($page == $pages || $page == 0) {echo "disabled";} ?>">
-                                            <a class="page-link" href="Medicine.php?page=<?php echo $next; ?>">Next</a>
+                                            <a class="page-link" href="Suppliers.php?page=<?php echo $next; ?>">Next</a>
                                         </li>
 
                                         <li class="page-item">
-                                            <a class="page-link" href="Medicine.php?page=<?php echo $pages; ?>">Last</a>
+                                            <a class="page-link" href="Suppliers.php?page=<?php echo $pages; ?>">Last</a>
                                         </li>
 
                                     </ul>
@@ -271,6 +271,10 @@ require_once "../Model/SuppliersInitializationModel.php";
 
                             <div class="col-1">
                                 <button type="button" class="btn btn-block btn-themed-success btn-add-supplier" name="addSupplierButton" id="addSupplierButton" data-toggle="modal" data-target="#AddSupplierModal"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Add Supplier</button>
+                            </div>
+
+                            <div class="col-1">
+                                <button type="button" class="btn btn-block btn-themed-primary btn-view-payments" name="viewPaymentsButton" id="viewPaymentsButton"><i class="fa-solid fa-list"></i>&nbsp;&nbsp;<a class="btn-view-payments-link" href="SuppliersViewPayments.php">View Payments</a></button>
                             </div>
 
                             <div class="col-3 searchbar">

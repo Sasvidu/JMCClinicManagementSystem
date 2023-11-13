@@ -22,11 +22,35 @@
 
 .btn-add-supplier {
   position: absolute;
-  right: 39%;
+  right: 43%;
+}
+
+.btn-view-payments {
+  position: absolute;
+  right: 33%;
+  display: flex;
+  align-items: center;
+}
+
+.btn-view-payments-link {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-view-payments-link:hover {
+  color: black;
 }
 
 .btn-success:hover {
   color: black;
+}
+
+.TitleTxt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 table {

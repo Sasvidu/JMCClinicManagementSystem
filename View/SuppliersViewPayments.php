@@ -1,7 +1,7 @@
 <?php
 
 require_once "../Model/Session.php";
-require_once "../Model/InventoryVIewOrdersInitializationModel.php";
+require_once "../Model/SuppliersViewPaymentsInitializationModel.php";
 
 ?>
 
@@ -19,12 +19,13 @@ require_once "../Model/InventoryVIewOrdersInitializationModel.php";
     <link rel="stylesheet" type="text/css" href="../bootstrap/bootstrap-5.0.2-dist/css/bootstrap.min.css">
 
     <!--Link Original Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="../CSS/InventoryStyles.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/SuppliersStyles.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/AdminDashboardStyles.css">
     <link rel="stylesheet" type="text/css" href="../CSS/CommonDashboardStyles.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Utilities.css">
 
     <!--Link to Original Script -->
+
 
     <!--Link to fontawesome icons -->
     <script src="https://kit.fontawesome.com/0c49cb8566.js" crossorigin="anonymous"></script>
@@ -228,7 +229,7 @@ require_once "../Model/InventoryVIewOrdersInitializationModel.php";
 
                         <div class="row">
                             <div class="col-12">
-                                <h2 class="TitleTxt">View Orders</h2>
+                                <h2 class="TitleTxt">View Payments</h2>
                             </div>
                         </div>
 
@@ -239,13 +240,13 @@ require_once "../Model/InventoryVIewOrdersInitializationModel.php";
                                     <ul class="pagination">
 
                                         <li class="page-item">
-                                            <a class="page-link" href="InventoryViewOrders.php?page=1">First</a>
+                                            <a class="page-link" href="SuppliersViewPayments.php?page=1">First</a>
                                         </li>
 
                                         <li class="page-item <?php if ($page == 1 || $page == 0) {
                                                                     echo "disabled";
                                                                 } ?>">
-                                            <a class="page-link" href="InventoryViewOrders.php?page=<?php echo $previous; ?>">Previous</a>
+                                            <a class="page-link" href="SuppliersViewPayments.php?page=<?php echo $previous; ?>">Previous</a>
                                         </li>
 
                                         <?php for ($i = 1; $i <= $pages; $i++) { ?>
@@ -253,7 +254,7 @@ require_once "../Model/InventoryVIewOrdersInitializationModel.php";
                                             <li class="page-item<?php if ($i == $page) {
                                                                     echo " active";
                                                                 } ?>">
-                                                <a class="page-link" href="InventoryViewOrders.php?page=<?php echo $i; ?>"> <?php echo $i; ?> </a>
+                                                <a class="page-link" href="SuppliersViewPayments.php?page=<?php echo $i; ?>"> <?php echo $i; ?> </a>
                                             </li>
 
                                         <?php } ?>
@@ -261,11 +262,11 @@ require_once "../Model/InventoryVIewOrdersInitializationModel.php";
                                         <li class="page-item <?php if ($page == $pages || $page == 0) {
                                                                     echo "disabled";
                                                                 } ?>">
-                                            <a class="page-link" href="InventoryViewOrders.php?page=<?php echo $next; ?>">Next</a>
+                                            <a class="page-link" href="SuppliersViewPayments.php?page=<?php echo $next; ?>">Next</a>
                                         </li>
 
                                         <li class="page-item">
-                                            <a class="page-link" href="InventoryViewOrders.php?page=<?php echo $pages; ?>">Last</a>
+                                            <a class="page-link" href="SuppliersViewPayments.php?page=<?php echo $pages; ?>">Last</a>
                                         </li>
 
                                     </ul>
@@ -293,31 +294,29 @@ require_once "../Model/InventoryVIewOrdersInitializationModel.php";
 
                                     <thead>
                                         <tr>
+                                            <th scope="col">Payment Id</th>
+                                            <th scope="col">Payment Amount</th>
+                                            <th scope="col">Payment Date</th>
+                                            <th scope="col">Supplier</th>
                                             <th scope="col">Order Id</th>
-                                            <th scope="col">Medicine Data</th>
-                                            <th scope="col">Supplier Name</th>
-                                            <th scope="col">Order Date</th>
-                                            <th scope="col">Order Quantity</th>
-                                            <th scope="col">Order Price</th>
-                                            <th scope="col">Payment Made</th>
+                                            <th scope="col">Payment Comment</th>
                                             <th scope="th-sm">Action</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
 
-                                        <form action="InventoryOrderReport.php?status=true" method="post">
-                                            <?php foreach ($orders as $order) { ?>
+                                        <form action="SuppliersPaymentReport.php?status=true" method="post">
+                                            <?php foreach ($payments as $payment) { ?>
                                                 <tr>
-                                                    <th scope="row"><?php echo $order['order_id'] ?></th>
-                                                    <td id="MedicineName<?php echo $order['order_id'] ?>"> <?php echo $order['medicine_name'] . ", " . $order['medicine_batch_no'] . ", " . $order['medicine_company'] . ", " . $order['medicine_category'] ?></td>
-                                                    <td id="SupplierName<?php echo $order['order_id'] ?>"><?php echo $order['supplier_name'] ?></td>
-                                                    <td id="Date<?php echo $order['order_id'] ?>"><?php echo $order['order_date'] ?></td>
-                                                    <td id="Qty<?php echo $order['order_id'] ?>"><?php echo $order['order_qty'] ?></td>
-                                                    <td id="Payment<?php echo $order['order_id'] ?>"><?php echo $order['order_price'] ?></td>
-                                                    <td id="PaymentMade<?php echo $order['order_id'] ?>"><?php echo $order['order_completed_payment'] ?></td>
+                                                    <th scope="row"><?php echo $payment['payment_id'] ?></th>
+                                                    <td id="PaymentAmount<?php echo $payment['payment_id'] ?>"> <?php echo $payment['payment_amount'] ?></td>
+                                                    <td id="PaymentDate<?php echo $payment['payment_id'] ?>"><?php echo $payment['payment_date'] ?></td>
+                                                    <td id="PaymentSupplierData<?php echo $payment['payment_id'] ?>"><?php echo $payment['supplier_id'] . ", " . $payment['supplier_name'] . ", " . $payment['supplier_origin'] . ", " . $payment['supplier_specialisation'] ?></td>
+                                                    <td id="PaymentOrderId<?php echo $payment['payment_id'] ?>"><?php echo $payment['payment_order_id'] ?></td>
+                                                    <td id="PaymentComment<?php echo $payment['payment_id'] ?>"><?php echo $payment['payment_comment'] ?></td>
                                                     <td>
-                                                        <button type="submit" formtarget="_blank" class="btn btn-sm btn-success" name="invoiceButton" id="invoice-<?php echo $order['order_id'] ?>" value="invoice-<?php echo $order['order_id'] ?>"><i class="fa-solid fa-file-invoice"></i>&nbsp;&nbsp;Receipt</button>
+                                                        <button type="submit" formtarget="_blank" class="btn btn-sm btn-success" name="invoiceButton" id="invoice-<?php echo $order['order_id'] ?>" value="invoice-<?php echo $order['order_id'] ?>"><i class="fa-solid fa-file-invoice"></i>&nbsp;&nbsp;Invoice</button>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
