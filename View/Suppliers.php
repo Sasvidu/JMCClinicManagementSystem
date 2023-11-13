@@ -25,7 +25,7 @@ require_once "../Model/SuppliersInitializationModel.php";
     <link rel="stylesheet" type="text/css" href="../CSS/Utilities.css">
 
     <!--Link to Original Script -->
-    <script defer src="../JS/SuplliersJS.js"></script>
+    <script defer src="../JS/SuppliersJS.js"></script>
 
     <!--Link to fontawesome icons -->
     <script src="https://kit.fontawesome.com/0c49cb8566.js" crossorigin="anonymous"></script>

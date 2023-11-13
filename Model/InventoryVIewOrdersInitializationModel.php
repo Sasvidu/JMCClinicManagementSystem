@@ -50,7 +50,7 @@ if (isset($_GET["search"])) {
 
 } else {
 
-    $sql = "SELECT * FROM stockorder JOIN medicine ON medicine.medicine_id = stockorder.order_medicine_id JOIN supplier ON supplier.supplier_id = stockorder.order_supplier_id WHERE order_status=1 ORDER BY order_id DESC LIMIT $start, $limit;";
+    $sql = "SELECT * FROM stockorder JOIN medicine ON medicine.medicine_id = stockorder.order_medicine_id JOIN supplier ON supplier.supplier_id = stockorder.order_supplier_id WHERE order_status=1 ORDER BY order_date DESC LIMIT $start, $limit;";
     $result = $myCon->query($sql) or die($myCon->error);
     $resCheck = mysqli_num_rows($result);
 
