@@ -71,7 +71,7 @@ require_once '../Commons/JeevaniDB.php';
     }
     */
 
-    //Add the product to the database:
+    //Add the medicine to the database:
     function InsertMedicine($con, $category, $brand, $company, $name, $batch, $size, $price, $info){
 
         //Prepare and Execute SQL statement:

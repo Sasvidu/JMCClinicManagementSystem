@@ -89,7 +89,7 @@ require_once "../Model/InventoryInitializationModel.php"
 
                         </div>
 
-                        <div class="col-12">
+                        <div class="col-12"> 
                             &nbsp;
                         </div>
 

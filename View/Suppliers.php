@@ -362,9 +362,9 @@ require_once "../Model/SuppliersInitializationModel.php";
 
     <?php
 
-        include_once "MedicineAddMedicineModal.php";
-        include_once "MedicineEditMedicineModal.php";
-        include_once "MedicineDeleteMedicineModal.php";
+        include_once "SuppliersAddSupplierModal.php";
+        include_once "SuppliersEditSupplierModal.php";
+        include_once "SuppliersDeleteSupplierModal.php";
 
     ?>
 
