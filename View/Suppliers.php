@@ -317,9 +317,10 @@ require_once "../Model/SuppliersInitializationModel.php";
                                             <td id="SupplierOrigin<?php echo $supplier['supplier_id']; ?>"> <?php echo $supplier['supplier_origin']; ?></td>
                                             <td id="SupplierSpecialisation<?php echo $supplier['supplier_id']; ?>"> <?php echo $supplier['supplier_specialisation']; ?></td>
                                             <td id="SupplierPendingPayment<?php echo $supplier['supplier_id']; ?>"> <?php echo $supplier['supplier_pending_payment']; ?></td>
-                                            <td>
-                                                <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $supplier['supplier_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
+                                            <td>      
+                                                <button type="button" class="btn btn-sm btn-success" name="paymentButton" id="payment<?php echo $supplier['supplier_id'] ?>" onclick="openPaymentModal(this.id)"><i class="fa-solid fa-money-bill"></i>&nbsp;Payment</button>    
                                                 <button type="button" class="btn btn-sm btn-themed-info" name="editButton" id="edit<?php echo $supplier['supplier_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
+                                                <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $supplier['supplier_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
                                             </td>
                                         </tr>
                                     <?php } ?>
@@ -365,6 +366,7 @@ require_once "../Model/SuppliersInitializationModel.php";
         include_once "SuppliersAddSupplierModal.php";
         include_once "SuppliersEditSupplierModal.php";
         include_once "SuppliersDeleteSupplierModal.php";
+        include_once "SuppliersMakePaymentModal.php";
 
     ?>
 

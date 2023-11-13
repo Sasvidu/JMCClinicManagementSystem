@@ -33,21 +33,28 @@ function openDeleteModal(id) {
     var fields = id.split("l");
     var supplierId = fields[1];
 
+    var supplierPendingPayment = "SupplierPendingPayment";
+    supplierPendingPayment = supplierPendingPayment.concat(supplierId);
+    supplierPendingPayment = document.getElementById(
+      supplierPendingPayment
+    ).innerText;
+
     //Open the delete stock model and set its field values to one's read from the stock record:
-    $("#DeleteStockModal").modal();
+    $("#DeleteSupplierModal").modal();
     $(".modal-body #Id").val(supplierId);
+    $(".modal-body #PendingPayment").val(supplierPendingPayment);
   });
 }
 
-function openOrderModal(id) {
+function openPaymentModal(id) {
   $(document).ready(function () {
     //Extract the data of specific stock:
-    var fields = id.split("r");
-    var supplierId = fields[2];
+    var fields = id.split("t");
+    var supplierId = fields[1];
 
     //Open the delete stock model and set its field values to one's read from the stock record:
-    $("#PlaceOrderModal").modal();
-    $(".modal-body #supplierId").val(supplierId);
+    $("#MakePaymentModal").modal();
+    $(".modal-body #SupplierId").val(supplierId);
   });
 }
 
