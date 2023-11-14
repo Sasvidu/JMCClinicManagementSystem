@@ -114,7 +114,7 @@ require_once '../Commons/JeevaniDB.php';
     
             if(!mysqli_stmt_prepare($stmta, $sqla)){
                 $msg = "Error: MySQL statement Failed";
-                //$msg = base64_encode($msg);
+                $msg = base64_encode($msg);
                 header("location: ../View/Doctors.php?msg=$msg");
                 exit();
             }
@@ -144,7 +144,7 @@ require_once '../Commons/JeevaniDB.php';
 
         if(!mysqli_stmt_prepare($stmt, $sql)){
             $msg = "Error: MySQL statement 1 Failed";
-            //$msg = base64_encode($msg);
+            $msg = base64_encode($msg);
             header("location: ../View/Doctors.php?msg=$msg");
             exit();
         }
@@ -158,9 +158,10 @@ require_once '../Commons/JeevaniDB.php';
 
         $stmta = mysqli_stmt_init($con);  
 
+
         if(!mysqli_stmt_prepare($stmta, $sqla)){
             $msg = "Error: MySQL statement 2 Failed";
-           // $msg = base64_encode($msg);
+            $msg = base64_encode($msg);
             header("location: ../View/Doctors.php?msg=$msg");
             exit();
         }

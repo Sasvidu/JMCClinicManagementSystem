@@ -64,6 +64,21 @@ function openEditModal(id) {
   });
 }
 
+function openDeleteModal(id) {
+  $(document).ready(function () {
+    var fields = id.split("l");
+    var doctorId = fields[1];
+
+    var doctorUserId = "DoctorUserId";
+    doctorUserId = doctorUserId.concat(doctorId);
+    doctorUserId = document.getElementById(doctorUserId).innerText;
+
+    $("#DeleteDoctorModal").modal();
+    $(".modal-body #Id").val(doctorId);
+    $(".modal-body #UserId").val(doctorUserId);
+  });
+}
+
 function changeLimits() {
   $(document).ready(function () {
     var limit = document.getElementById("limitSelector");

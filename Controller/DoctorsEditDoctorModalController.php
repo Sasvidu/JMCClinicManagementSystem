@@ -52,7 +52,7 @@
         }catch(exception $ex){
 
             $msg = $ex->getMessage();
-            //$msg = base64_encode($msg);
+            $msg = base64_encode($msg);
 
             header("location: ../View/Doctors.php?msg=$msg");
 

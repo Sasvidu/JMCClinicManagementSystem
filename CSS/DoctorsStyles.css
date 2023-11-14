@@ -59,3 +59,7 @@ th {
 .modal-header {
   width: 100% !important;
 }
+
+.modal-footer {
+  width: 100% !important;
+}
