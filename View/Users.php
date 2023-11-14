@@ -300,10 +300,15 @@ require_once "../Model/UsersInitializationModel.php";
                                                     <td id="UserDateOfBirth<?php echo $admin['user_id']; ?>"> <?php echo $admin['user_dob']; ?></td>
                                                     <td id="UserEmail<?php echo $admin['user_id']; ?>"> <?php echo $admin['user_email']; ?></td>
                                                     <td id="UserNIC<?php echo $admin['user_id']; ?>"> <?php echo $admin['user_nic']; ?></td>
-                                                    <td>
+                                                    <td class="adminTableButtons">
                                                         <?php if($userRole=="Admin") { ?>
-                                                            <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $admin['user_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
-                                                            <button type="button" class="btn btn-sm btn-themed-info" name="editButton" id="edit<?php echo $admin['user_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
+                                                            <?php 
+                                                                if($userId==$admin['user_id']){ ?>
+                                                                    <button type="button" class="btn btn-admin btn-sm btn-success" name="changePasswordButton" id="password<?php echo $admin['user_id'] ?>" onclick="openChangePasswordModal(this.id)"><i class="fa-solid fa-money-bill"></i>&nbsp;Change Password</button>
+                                                                <?php } 
+                                                            ?>
+                                                            <button type="button" class="btn btn-admin btn-sm btn-themed-info" name="editButton" id="edit<?php echo $admin['user_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
+                                                            <button type="button" class="btn btn-admin btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $admin['user_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
                                                         <?php } ?>
                                                     </td>
                                                 </tr>
@@ -390,8 +395,9 @@ require_once "../Model/UsersInitializationModel.php";
                                                     <td id="UserEmail<?php echo $doctor['user_id']; ?>"> <?php echo $doctor['user_email']; ?></td>
                                                     <td id="UserNIC<?php echo $doctor['user_id']; ?>"> <?php echo $doctor['user_nic']; ?></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $doctor['user_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
+                                                        <button type="button" class="btn btn-sm btn-success" name="changePasswordButton" id="password<?php echo $doctor['user_id'] ?>" onclick="openChangePasswordModal(this.id)"><i class="fa-solid fa-money-bill"></i>&nbsp;Change Password</button>
                                                         <button type="button" class="btn btn-sm btn-themed-info" name="editButton" id="edit<?php echo $doctor['user_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
+                                                        <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $doctor['user_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>                                 
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -477,8 +483,9 @@ require_once "../Model/UsersInitializationModel.php";
                                                     <td id="UserEmail<?php echo $patient['user_id']; ?>"> <?php echo $patient['user_email']; ?></td>
                                                     <td id="UserNIC<?php echo $patient['user_id']; ?>"> <?php echo $patient['user_nic']; ?></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $patient['user_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
+                                                        <button type="button" class="btn btn-sm btn-success" name="changePasswordButton" id="password<?php echo $patient['user_id'] ?>" onclick="openChangePasswordModal(this.id)"><i class="fa-solid fa-money-bill"></i>&nbsp;Change Password</button>
                                                         <button type="button" class="btn btn-sm btn-themed-info" name="editButton" id="edit<?php echo $patient['user_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
+                                                        <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $patient['user_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -564,8 +571,9 @@ require_once "../Model/UsersInitializationModel.php";
                                                     <td id="UserEmail<?php echo $clerk['user_id']; ?>"> <?php echo $clerk['user_email']; ?></td>
                                                     <td id="UserNIC<?php echo $clerk['user_id']; ?>"> <?php echo $clerk['user_nic']; ?></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $clerk['user_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
+                                                        <button type="button" class="btn btn-sm btn-success" name="changePasswordButton" id="password<?php echo $clerk['user_id'] ?>" onclick="openChangePasswordModal(this.id)"><i class="fa-solid fa-money-bill"></i>&nbsp;Change Password</button>
                                                         <button type="button" class="btn btn-sm btn-themed-info" name="editButton" id="edit<?php echo $clerk['user_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
+                                                        <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $clerk['user_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -610,6 +618,7 @@ require_once "../Model/UsersInitializationModel.php";
         include_once "UsersAddUserModal.php";
         include_once "UsersEditUserModal.php";
         include_once "UsersDeleteUserModal.php";
+        include_once "UsersChangePasswordModal.php";
 
     ?>
 

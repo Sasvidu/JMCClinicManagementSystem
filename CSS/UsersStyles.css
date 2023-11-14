@@ -26,6 +26,19 @@
   padding-right: 2rem;
 }
 
+.btn-success:hover {
+  color: black;
+}
+
+.adminTableButtons {
+  display: flex;
+  justify-content: end;
+}
+
+.btn-admin {
+  margin: 1%;
+}
+
 .TitleTxt {
   display: flex;
   justify-content: center;

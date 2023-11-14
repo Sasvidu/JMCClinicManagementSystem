@@ -50,6 +50,16 @@ function openDeleteModal(id) {
   });
 }
 
+function openChangePasswordModal(id) {
+  $(document).ready(function () {
+    var fields = id.split("d");
+    var Id = fields[1];
+
+    $("#ChangePasswordUserModal").modal();
+    $(".modal-body #Id").val(Id);
+  });
+}
+
 function changeAdminsLimits() {
   $(document).ready(function () {
     var limit = document.getElementById("limitSelectorAdmins");
@@ -84,4 +94,30 @@ function changeClerksLimits() {
 
     $(".limitSelectClerksForm").submit();
   });
+}
+
+function showPasswordFunction() {
+  passwordField = document.getElementById("NewPassword");
+  icon = document.getElementById("eye-icon1");
+
+  if (passwordField.type == "password") {
+    passwordField.type = "text";
+    icon.className = "fa-solid fa-eye-slash";
+  } else if (passwordField.type == "text") {
+    passwordField.type = "password";
+    icon.className = "fa-solid fa-eye";
+  }
+}
+
+function showRePasswordFunction() {
+  passwordField = document.getElementById("RePassword");
+  icon = document.getElementById("eye-icon2");
+
+  if (passwordField.type == "password") {
+    passwordField.type = "text";
+    icon.className = "fa-solid fa-eye-slash";
+  } else if (passwordField.type == "text") {
+    passwordField.type = "password";
+    icon.className = "fa-solid fa-eye";
+  }
 }
