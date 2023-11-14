@@ -295,14 +295,16 @@ require_once "../Model/UsersInitializationModel.php";
                                             <?php foreach ($admins as $admin) { ?>
                                                 <tr>
                                                     <th scope="row"><?php echo $admin['user_id']; ?></th>
-                                                    <td id="AdminName<?php echo $admin['user_id']; ?>"> <?php echo $admin['user_fname'] . " " . $admin['user_lname']; ?></td>
-                                                    <td id="AdminAddress<?php echo $admin['user_id']; ?>"> <?php echo $admin['user_address']; ?></td>
-                                                    <td id="AdminDateOfBirth<?php echo $admin['user_id']; ?>"> <?php echo $admin['user_dob']; ?></td>
-                                                    <td id="AdminEmail<?php echo $admin['user_id']; ?>"> <?php echo $admin['user_email']; ?></td>
-                                                    <td id="AdminNIC<?php echo $admin['user_id']; ?>"> <?php echo $admin['user_nic']; ?></td>
+                                                    <td id="UserName<?php echo $admin['user_id']; ?>"> <?php echo $admin['user_fname'] . " " . $admin['user_lname']; ?></td>
+                                                    <td id="UserAddress<?php echo $admin['user_id']; ?>"> <?php echo $admin['user_address']; ?></td>
+                                                    <td id="UserDateOfBirth<?php echo $admin['user_id']; ?>"> <?php echo $admin['user_dob']; ?></td>
+                                                    <td id="UserEmail<?php echo $admin['user_id']; ?>"> <?php echo $admin['user_email']; ?></td>
+                                                    <td id="UserNIC<?php echo $admin['user_id']; ?>"> <?php echo $admin['user_nic']; ?></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $admin['user_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
-                                                        <button type="button" class="btn btn-sm btn-themed-info" name="editButton" id="edit<?php echo $admin['user_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
+                                                        <?php if($userRole=="Admin") { ?>
+                                                            <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $admin['user_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
+                                                            <button type="button" class="btn btn-sm btn-themed-info" name="editButton" id="edit<?php echo $admin['user_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
+                                                        <?php } ?>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -382,11 +384,11 @@ require_once "../Model/UsersInitializationModel.php";
                                             <?php foreach ($doctors as $doctor) { ?>
                                                 <tr>
                                                     <th scope="row"><?php echo $doctor['user_id']; ?></th>
-                                                    <td id="DoctorName<?php echo $doctor['user_id']; ?>"> <?php echo $doctor['user_fname'] . " " . $doctor['user_lname']; ?></td>
-                                                    <td id="DoctorAddress<?php echo $doctor['user_id']; ?>"> <?php echo $doctor['user_address']; ?></td>
-                                                    <td id="DoctorDateOfBirth<?php echo $doctor['user_id']; ?>"> <?php echo $doctor['user_dob']; ?></td>
-                                                    <td id="DoctorEmail<?php echo $doctor['user_id']; ?>"> <?php echo $doctor['user_email']; ?></td>
-                                                    <td id="DoctorNIC<?php echo $doctor['user_id']; ?>"> <?php echo $doctor['user_nic']; ?></td>
+                                                    <td id="UserName<?php echo $doctor['user_id']; ?>"> <?php echo $doctor['user_fname'] . " " . $doctor['user_lname']; ?></td>
+                                                    <td id="UserAddress<?php echo $doctor['user_id']; ?>"> <?php echo $doctor['user_address']; ?></td>
+                                                    <td id="UserDateOfBirth<?php echo $doctor['user_id']; ?>"> <?php echo $doctor['user_dob']; ?></td>
+                                                    <td id="UserEmail<?php echo $doctor['user_id']; ?>"> <?php echo $doctor['user_email']; ?></td>
+                                                    <td id="UserNIC<?php echo $doctor['user_id']; ?>"> <?php echo $doctor['user_nic']; ?></td>
                                                     <td>
                                                         <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $doctor['user_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
                                                         <button type="button" class="btn btn-sm btn-themed-info" name="editButton" id="edit<?php echo $doctor['user_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
@@ -469,11 +471,11 @@ require_once "../Model/UsersInitializationModel.php";
                                             <?php foreach ($patients as $patient) { ?>
                                                 <tr>
                                                     <th scope="row"><?php echo $patient['user_id']; ?></th>
-                                                    <td id="PatientName<?php echo $patient['user_id']; ?>"> <?php echo $patient['user_fname'] . " " . $patient['user_lname']; ?></td>
-                                                    <td id="PatientAddress<?php echo $patient['user_id']; ?>"> <?php echo $patient['user_address']; ?></td>
-                                                    <td id="PatientDateOfBirth<?php echo $patient['user_id']; ?>"> <?php echo $patient['user_dob']; ?></td>
-                                                    <td id="PatientEmail<?php echo $patient['user_id']; ?>"> <?php echo $patient['user_email']; ?></td>
-                                                    <td id="PatientNIC<?php echo $patient['user_id']; ?>"> <?php echo $patient['user_nic']; ?></td>
+                                                    <td id="UserName<?php echo $patient['user_id']; ?>"> <?php echo $patient['user_fname'] . " " . $patient['user_lname']; ?></td>
+                                                    <td id="UserAddress<?php echo $patient['user_id']; ?>"> <?php echo $patient['user_address']; ?></td>
+                                                    <td id="UserDateOfBirth<?php echo $patient['user_id']; ?>"> <?php echo $patient['user_dob']; ?></td>
+                                                    <td id="UserEmail<?php echo $patient['user_id']; ?>"> <?php echo $patient['user_email']; ?></td>
+                                                    <td id="UserNIC<?php echo $patient['user_id']; ?>"> <?php echo $patient['user_nic']; ?></td>
                                                     <td>
                                                         <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $patient['user_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
                                                         <button type="button" class="btn btn-sm btn-themed-info" name="editButton" id="edit<?php echo $patient['user_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
@@ -556,11 +558,11 @@ require_once "../Model/UsersInitializationModel.php";
                                             <?php foreach ($clerks as $clerk) { ?>
                                                 <tr>
                                                     <th scope="row"><?php echo $clerk['user_id']; ?></th>
-                                                    <td id="ClerkName<?php echo $clerk['user_id']; ?>"> <?php echo $clerk['user_fname'] . " " . $clerk['user_lname']; ?></td>
-                                                    <td id="ClerkAddress<?php echo $clerk['user_id']; ?>"> <?php echo $clerk['user_address']; ?></td>
-                                                    <td id="ClerkDateOfBirth<?php echo $clerk['user_id']; ?>"> <?php echo $clerk['user_dob']; ?></td>
-                                                    <td id="ClerkEmail<?php echo $clerk['user_id']; ?>"> <?php echo $clerk['user_email']; ?></td>
-                                                    <td id="ClerkNIC<?php echo $clerk['user_id']; ?>"> <?php echo $clerk['user_nic']; ?></td>
+                                                    <td id="UserName<?php echo $clerk['user_id']; ?>"> <?php echo $clerk['user_fname'] . " " . $clerk['user_lname']; ?></td>
+                                                    <td id="UserAddress<?php echo $clerk['user_id']; ?>"> <?php echo $clerk['user_address']; ?></td>
+                                                    <td id="UserDateOfBirth<?php echo $clerk['user_id']; ?>"> <?php echo $clerk['user_dob']; ?></td>
+                                                    <td id="UserEmail<?php echo $clerk['user_id']; ?>"> <?php echo $clerk['user_email']; ?></td>
+                                                    <td id="UserNIC<?php echo $clerk['user_id']; ?>"> <?php echo $clerk['user_nic']; ?></td>
                                                     <td>
                                                         <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $clerk['user_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
                                                         <button type="button" class="btn btn-sm btn-themed-info" name="editButton" id="edit<?php echo $clerk['user_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
@@ -605,9 +607,9 @@ require_once "../Model/UsersInitializationModel.php";
 
     <?php
 
-        // include_once "DoctorsAddDoctorModal.php";
-        // include_once "DoctorsEditDoctorModal.php";
-        // include_once "DoctorsDeleteDoctorModal.php";
+        include_once "UsersAddUserModal.php";
+        include_once "UsersEditUserModal.php";
+        include_once "UsersDeleteUserModal.php";
 
     ?>
 
