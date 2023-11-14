@@ -14,45 +14,28 @@
 
                                 <div class="row">
 
-                                    <div class="col-12">
-                                        &nbsp;
-                                    </div>
+                                    <div class="col-12">&nbsp;</div>
 
                                     <!-- Field for Supplier Name -->
                                     <div class="col-12">
-
                                         <label>Supplier Name:</label>
                                         <input id="Name" name="Name" type="text" class="form-control" placeholder="Enter the name of the supplier">
-
                                     </div>
-
-                                    <div class="col-12">
-                                        &nbsp;
-                                    </div>
+                                    <div class="col-12">&nbsp;</div>
 
                                     <!-- Field for Supplier Origin -->
                                     <div class="col-12">
-
                                         <label>Supplier Origin:</label>
                                         <input id="Origin" name="Origin" type="text" class="form-control" placeholder="Enter the location of the supplier">
-
                                     </div>
-
-                                    <div class="col-12">
-                                        &nbsp;
-                                    </div>
+                                    <div class="col-12">&nbsp;</div>
 
                                     <!-- Field for Supplier Specialisation -->
                                     <div class="col-12">
-
                                         <label>Supplier Specialisation:</label>
                                         <input id="Specialisation" name="Specialisation" type="text" class="form-control" placeholder="Enter the specialisation of the supplier">
-
                                     </div>
-
-                                    <div class="col-12">
-                                        &nbsp;
-                                    </div>
+                                    <div class="col-12">&nbsp;</div>
 
                                 </div>
 

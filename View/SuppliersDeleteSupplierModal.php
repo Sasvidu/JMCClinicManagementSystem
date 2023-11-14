@@ -13,9 +13,7 @@
 
                     <div class="row">
 
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
+                        <div class="col-12">&nbsp;</div>
 
                         <div class="col-12">
                             <label>Supplier Id:</label>
@@ -25,18 +23,12 @@
                         <div class="col-12">
                             <input id="PendingPayment" name="PendingPayment" type="hidden" class="form-control" readonly>
                         </div>
-                        
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
+                        <div class="col-12">&nbsp;</div>
 
                         <div class="col-12">
                             <p align="center" style="font-size:larger">Are you sure you want to delete this supplier?</p>
                         </div>
-
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
+                        <div class="col-12">&nbsp;</div>
 
                     </div>
 

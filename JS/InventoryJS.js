@@ -44,12 +44,10 @@ function openEditModal(id) {
     var CreateDate = "StockCreatedDate";
     CreateDate = CreateDate.concat(medicineId);
     CreateDate = document.getElementById(CreateDate).innerText;
-    CreateDate = formatDate(CreateDate);
 
     var UpdateDate = "StockUpdatedDate";
     UpdateDate = UpdateDate.concat(medicineId);
     UpdateDate = document.getElementById(UpdateDate).innerText;
-    UpdateDate = formatDate(UpdateDate);
 
     //Open the edit stock model and set its field values to one's read from the stock record:
     $("#UpdateStockModal").modal();
@@ -86,19 +84,6 @@ function openOrderModal(id) {
     $("#PlaceOrderModal").modal();
     $(".modal-body #MedicineId").val(medicineId);
   });
-}
-
-//Convert the date format to the one used by the date time picker in the modal:
-function formatDate(date) {
-  var d = new Date(date),
-    month = "" + (d.getMonth() + 1),
-    day = "" + d.getDate(),
-    year = d.getFullYear();
-
-  if (month.length < 2) month = "0" + month;
-  if (day.length < 2) day = "0" + day;
-
-  return [month, day, year].join("/");
 }
 
 //Submit the limit change upon change in value:

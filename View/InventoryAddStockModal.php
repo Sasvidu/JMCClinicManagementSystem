@@ -35,10 +35,7 @@ if ($resCheck > 0) {
 
                     <div class="row">
 
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
-
+                        <div class="col-12">&nbsp;</div>
                         <div class="col-12">
 
                             <label>Medicine to create the stock for:</label>
@@ -72,43 +69,25 @@ if ($resCheck > 0) {
                             </select>
 
                         </div>
+                        <div class="col-12">&nbsp;</div>
 
                         <div class="col-12">
-                            &nbsp;
-                        </div>
-
-                        <div class="col-12">
-
                             <label>Maximum quantity:</label>
                             <input id="MaxQty" name="MaxQty" type="number" min="0" class="form-control" placeholder="Enter the maximum quantity which can be held in stock">
-
                         </div>
+                        <div class="col-12">&nbsp;</div>
 
                         <div class="col-12">
-                            &nbsp;
-                        </div>
-
-                        <div class="col-12">
-
                             <label>Re-order quantity:</label>
                             <input id="BufferQty" name="BufferQty" type="number" min="0" class="form-control" placeholder="Enter the buffer inventory level">
-
                         </div>
+                        <div class="col-12">&nbsp;</div>
 
                         <div class="col-12">
-                            &nbsp;
-                        </div>
-
-                        <div class="col-12">
-
                             <label>Date of creation:</label>
                             <input id="Date" name="Date" type="date" class="form-control" placeholder="Enter stock creation date">
-
                         </div>
-
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
+                        <div class="col-12">&nbsp;</div>
 
                     </div>
 

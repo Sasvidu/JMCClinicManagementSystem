@@ -21,75 +21,45 @@
 
                         <!-- Field for Medicine Name -->
                         <div class="col-12">
-
                             <label>Medicine:</label>
                             <input id="MedicineData" name="MedicineData" type="text" class="form-control" readonly>
-
                         </div>
-
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
+                        <div class="col-12">&nbsp;</div>
 
                         <!-- Field for Maximum Quantity -->
                         <div class="col-12">
-
                             <label>Maximum quantity:</label>
                             <input id="MaxQty" name="MaxQty" type="number" min="0" class="form-control" placeholder="Enter the maximum quantity which can be held in stock">
-
                         </div>
-
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
+                        <div class="col-12">&nbsp;</div>
 
                         <!-- Field for Buffer Quantity -->
                         <div class="col-12">
-
                             <label>Re-order quantity:</label>
                             <input id="BufferQty" name="BufferQty" type="number" min="0" class="form-control" placeholder="Enter the buffer inventory level">
-
                         </div>
-
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
+                        <div class="col-12">&nbsp;</div>
 
                         <!-- Field for Current QUantity -->
                         <div class="col-12">
-
                             <label>Current quantity:</label>
                             <input id="CurrentQty" name="CurrentQty" type="number" min="0" class="form-control" placeholder="Enter the buffer inventory level">
-
                         </div>
-
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
+                        <div class="col-12">&nbsp;</div>
 
                         <!-- Field for Date of Creation -->
                         <div class="col-12">
-
                             <label>Date of creation: (mm/dd/yyyy)</label>
-                            <input id="CreateDate" name="CreateDate" type="text" class="form-control">
-
+                            <input id="CreateDate" name="CreateDate" type="date" class="form-control">
                         </div>
-
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
+                        <div class="col-12">&nbsp;</div>
 
                         <!-- Field for Date of Last Modification -->
                         <div class="col-12">
-
                             <label>Date of last update: (mm/dd/yyyy)</label>
-                            <input id="UpdateDate" name="UpdateDate" type="text" class="form-control">
-
+                            <input id="UpdateDate" name="UpdateDate" type="date" class="form-control">
                         </div>
-
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
+                        <div class="col-12">&nbsp;</div>
 
                     </div>
 

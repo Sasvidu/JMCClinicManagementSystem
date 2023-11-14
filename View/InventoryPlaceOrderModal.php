@@ -34,21 +34,14 @@ if ($resChecka > 0) {
                     <div class="row">
 
                         <div class="col-12">
-
                             <label>Medicine Id:</label>
                             <div class="col-12">
-                            <input id="MedicineId" name="MedicineId" type="text" class="form-control" readonly>
-
+                                <input id="MedicineId" name="MedicineId" type="text" class="form-control" readonly>
+                            </div>
                         </div>
-
-                        </div>
+                        <div class="col-12">&nbsp;</div>
 
                         <div class="col-12">
-                            &nbsp;
-                        </div>
-
-                        <div class="col-12">
-
                             <label>Supplier name:</label>
                             <select id="Supplier" name="Supplier" class="form-select" aria-label="Default select example">
                                 <option selected value="Unspecified">Select a Supplier</option>
@@ -58,34 +51,20 @@ if ($resChecka > 0) {
 
                                 <?php } ?>
                             </select>
-
                         </div>
+                        <div class="col-12">&nbsp;</div>
 
                         <div class="col-12">
-                            &nbsp;
-                        </div>
-
-                        <div class="col-12">
-
                             <label>Order Date:</label>
                             <input id="OrderDate" name="OrderDate" type="date" class="form-control" placeholder="Enter the order date">
-
                         </div>
+                        <div class="col-12">&nbsp;</div>
 
                         <div class="col-12">
-                            &nbsp;
-                        </div>
-
-                        <div class="col-12">
-
                             <label>Order quantity:</label>
                             <input id="Qty" name="Qty" type="number" min="0" class="form-control" placeholder="Enter the quantity of medicines ordered">
-
                         </div>
-
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
+                        <div class="col-12">&nbsp;</div>
 
                     </div>
 

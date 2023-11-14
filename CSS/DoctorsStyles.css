@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500");
+
+* {
+  width: fit-content;
+}
+
+body {
+  overflow-x: visible !important;
+}
+
+.title-welcome {
+  position: fixed !important;
+}
+
+.title-role {
+  position: fixed !important;
+}
+
+.paginationNav {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0.9rem;
+}
+
+.limitSelect {
+  width: auto;
+  margin: 0;
+}
+
+.limitSelectForm {
+  margin-bottom: 2rem;
+}
+
+.searchbar {
+  position: fixed;
+  right: -7%;
+}
+
+.btn-add-doctor {
+  position: fixed;
+  right: 39%;
+}
+
+table {
+  table-layout: auto;
+}
+
+td,
+th {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#Action {
+  width: 5%;
+}
+
+.modal-header {
+  width: 100% !important;
+}

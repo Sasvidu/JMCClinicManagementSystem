@@ -23,17 +23,13 @@
                             <input id="Id" name="Id" type="text" class="form-control" readonly>
                         </div>
 
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
+                        <div class="col-12">&nbsp;</div>
 
                         <div class="col-12">
                             <p align="center" style="font-size:larger">Are you sure you want to delete this stock?</p>
                         </div>
-
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
+                        
+                        <div class="col-12">&nbsp;</div>
 
                     </div>
 

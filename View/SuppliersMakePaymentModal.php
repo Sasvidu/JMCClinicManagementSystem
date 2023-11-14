@@ -14,37 +14,22 @@
                     <div class="row">
 
                         <div class="col-12">
-
                             <label>Supplier Id:</label>
                             <input id="SupplierId" name="SupplierId" type="text" class="form-control" readonly>
-
                         </div>
+                        <div class="col-12">&nbsp;</div>
 
                         <div class="col-12">
-                            &nbsp;
-                        </div>
-
-                        <div class="col-12">
-
                             <label>Payment Amount:</label>
                             <input id="PaymentAmount" name="PaymentAmount" type="number" min="0.00" step=".01" class="form-control" placeholder="000000.00">
-
                         </div>
+                        <div class="col-12">&nbsp;</div>
 
                         <div class="col-12">
-                            &nbsp;
-                        </div>
-
-                        <div class="col-12">
-
                             <label>Payment Date:</label>
                             <input id="PaymentDate" name="PaymentDate" type="date" class="form-control" placeholder="Enter the payment date">
-
                         </div>
-
-                        <div class="col-12">
-                            &nbsp;
-                        </div>     
+                        <div class="col-12">&nbsp;</div>
 
                         <div class="col-12">
 
@@ -110,16 +95,11 @@
                             </select>
 
                         </div>
+                        <div class="col-12">&nbsp;</div>
 
                         <div class="col-12">
-                            &nbsp;
-                        </div>
-
-                        <div class="col-12">
-
                             <label>Payment Comment (Mandatory if no order selected):</label>
                             <input id="PaymentComment" name="PaymentComment" type="text" class="form-control" placeholder="Ex: Settlement of overdue interest">
-
                         </div>
 
                     </div>
