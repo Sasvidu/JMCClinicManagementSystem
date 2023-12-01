@@ -56,6 +56,8 @@
             header("location: ../View/Users.php");
         }else if($action == "dashboard-submit-schedules"){
             header("location: ../View/Schedules.php");
+        }else if($action == "dashboard-submit-appointments"){
+            header("location: ../View/Appointments.php");
         }else{
 
             //If the action is not defined, go back to home page:

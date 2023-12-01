@@ -43,10 +43,10 @@ require_once '../Commons/JeevaniDB.php';
 
         if($availableTime == $oldStartTime){
             //In case there are no appointments placed, let the times to be changed any way in accordance with the schedulee creation rules
-            return true;
+            return 0;
         }else if(($startTIme <= $oldStartTime) && ($availableTime <= $endTime)){
             //In case there are appointments placed, ensure that the new start time is earlier and the new end time is higher than the time of the last appointment
-            return true;
+            return 1;
         }else{
             return false;
         }
@@ -92,5 +92,29 @@ require_once '../Commons/JeevaniDB.php';
         $code = "Schedule Updated Successfully!";
         $code = base64_encode($code);
         header("location: ../View/Schedules.php?code=$code");
+
+    }
+
+    function UpdateScheduleWithNoAppointments($con, $scheduleId, $startTIme, $endTime){
+
+                //update Schedule Details
+                $sql = "UPDATE `schedule` SET `schedule_start_time` = ?, `schedule_end_time` = ?, `schedule_available_time` = ? WHERE `schedule_id` = ?;";
+
+                $stmt = mysqli_stmt_init($con);  
+        
+                if(!mysqli_stmt_prepare($stmt, $sql)){
+                    $msg = "Error: MySQL statement Failed";
+                    $msg = base64_encode($msg);
+                    header("location: ../View/Schedules.php?msg=$msg");
+                    exit();
+                }
+        
+                mysqli_stmt_bind_param($stmt, "ssss", $startTIme, $endTime, $startTIme, $scheduleId);
+                mysqli_stmt_execute($stmt);
+                mysqli_stmt_close($stmt);
+        
+                $code = "Schedule Updated Successfully!";
+                $code = base64_encode($code);
+                header("location: ../View/Schedules.php?code=$code");
 
     }

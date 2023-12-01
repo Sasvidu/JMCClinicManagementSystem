@@ -31,7 +31,7 @@
                 throw new Exception(emptyInputCheck($scheduleId, $startTImeOG, $endTimeOG));
             }
 
-            if(editingAllowed($myCon, $scheduleId, $startTime, $endTime) !== true){
+            if($containsAppointments = editingAllowed($myCon, $scheduleId, $startTime, $endTime) === false){
                 throw new Exception("The new timings for the schedule are not allowed, please try selecting the times such that there is no conflict with existing appointment bookings.");
             }
 
@@ -39,9 +39,14 @@
                 throw new Exception(timingValidator($startTime, $endTime));
             }
 
-            echo "fine";
-
-            UpdateSchedule($myCon, $scheduleId, $startTimeOG, $endTimeOG);
+            if($containsAppointments == 1){
+                UpdateSchedule($myCon, $scheduleId, $startTimeOG, $endTimeOG);
+            }else if($containsAppointments == 0){
+                UpdateScheduleWithNoAppointments($myCon, $scheduleId, $startTimeOG, $endTimeOG);
+            }else{
+                throw new Exception("Something went wrong, please try contacting your troubleshooting manager.");
+            }
+            
 
         }catch(exception $ex){
 

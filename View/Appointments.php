@@ -145,10 +145,12 @@ require_once "../Model/ScheduleInitializationModel.php";
                             &nbsp;
                         </div>
 
-                        <div class="col-12 dashboard-item dashboard-selected-item">
+                        <div class="col-12 dashboard-item dashboard-selectable-item">
 
-                            <img src="../Commons/icons/bg-removed/schedule-white.png" class="dashboard-item-image">
-                            <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Schedules</span>
+                            <button name="dashboard-submit" value="dashboard-submit-schedules" type="submit" class="dashboard-btn">
+                                <img src="../Commons/icons/bg-removed/schedule-white.png" class="dashboard-item-image">
+                                <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Schedules</span>
+                            </button>
 
                         </div>
 
@@ -156,13 +158,11 @@ require_once "../Model/ScheduleInitializationModel.php";
                             &nbsp;
                         </div>
 
-                        <div class="col-12 dashboard-item dashboard-selectable-item">
-
-                            <button name="dashboard-submit" value="dashboard-submit-appointments" type="submit" class="dashboard-btn">
-                                <img src="../Commons/icons/bg-removed/appointment-white.png" class="dashboard-item-image">
-                                <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Appointments</span>
-                            </button>
-
+                        <div class="col-12 dashboard-item dashboard-selected-item">
+                            
+                            <img src="../Commons/icons/bg-removed/appointment-white.png" class="dashboard-item-image">
+                            <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Appointments</span>
+                    
                         </div>
 
                         <div class="col-12">
