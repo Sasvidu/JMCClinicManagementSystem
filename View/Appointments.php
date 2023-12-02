@@ -291,7 +291,6 @@ require_once "../Model/AppointmentInitializationModel.php";
                                                 <td id="appointmentPatient<?php echo $appointment['appointment_id']; ?>"> <?php echo ($appointment['patient_first_name'] . " " . $appointment['patient_last_name']); ?></td>
                                                 <td>
                                                     <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $appointment['appointment_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
-                                                    <button type="button" class="btn btn-sm btn-themed-info" name="editButton" id="edit<?php echo $appointment['appointment_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -317,9 +316,8 @@ require_once "../Model/AppointmentInitializationModel.php";
 
     <?php
 
-        //include_once "ScheduleAddScheduleModal.php";
-        //include_once "ScheduleEditScheduleModal.php";
-        //include_once "ScheduleDeleteScheduleModal.php";
+        include_once "AppointmentAddAppointmentModal.php";
+        include_once "AppointmentDeleteAppointmentModal.php";
 
     ?>
 
