@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500");
+
+.searchbar {
+  width: max-content;
+  position: absolute;
+  right: 1rem;
+}
+
+table {
+  table-layout: auto;
+}
+
+td,
+th {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#searchForm {
+  display: flex;
+}
+
+#DateContainer {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#DateInput {
+  width: max-content;
+  height: fit-content;
+}
+
+#Action {
+  width: 5%;
+}
