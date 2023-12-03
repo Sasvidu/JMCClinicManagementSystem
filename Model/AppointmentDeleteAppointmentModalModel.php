@@ -81,7 +81,7 @@ require_once '../Commons/JeevaniDB.php';
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
 
-        $code = "Schedule deleted successfully!";
+        $code = "Appointment deleted successfully!";
         $code = base64_encode($code);
         header("location: ../View/Appointments.php?msg=$code");
 

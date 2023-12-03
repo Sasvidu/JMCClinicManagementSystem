@@ -102,7 +102,7 @@ require_once '../Commons/JeevaniDB.php';
         mysqli_stmt_execute($stmta);
         mysqli_stmt_close($stmta);
 
-        $code = "Schedule Created Successfully!";
+        $code = "Appointment Created Successfully!";
         $code = base64_encode($code);
         header("location: ../View/Appointments.php?code=$code");
 
