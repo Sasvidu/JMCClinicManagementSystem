@@ -4,7 +4,25 @@ require_once "../Commons/JeevaniDB.php";
 $thisDBConnection = new DbConnection();
 $myCon = $thisDBConnection->con;
 
-$sql = "SELECT * FROM appointment JOIN schedule ON appointment.appointment_schedule_id = schedule.schedule_id JOIN doctor ON schedule.schedule_doctor_id = doctor.doctor_id JOIN user ON doctor.doctor_user_id = user.user_id WHERE appointment_status = 1 AND appointment_prescription_status = 0 ORDER BY schedule_date ASC;";
+$sql = "SELECT 
+        appointment.*,
+        schedule.*,
+        doctor.*,
+        doctorUser.*,
+        patient.user_id AS patient_id,
+        patient.user_fname AS patient_fname,
+        patient.user_lname AS patient_lname,
+        patient.user_email AS patient_email
+        FROM appointment
+        JOIN schedule ON appointment.appointment_schedule_id = schedule.schedule_id
+        JOIN doctor ON schedule.schedule_doctor_id = doctor.doctor_id
+        JOIN user AS doctorUser ON doctor.doctor_user_id = doctorUser.user_id
+        JOIN user AS patient ON appointment.appointment_patient_id = patient.user_id
+        WHERE 
+        appointment_status = 1 
+        AND appointment_prescription_status = 0 
+        ORDER BY schedule_date ASC;
+        ";
 $result = $myCon->query($sql) or die($myCon->error);
 $resCheck = mysqli_num_rows($result);
 
@@ -66,7 +84,7 @@ if ($resCheckNew > 0) {
                                         <?php if ($appointment['appointment_id'] == 0) {
                                             echo "No appointments available";
                                         } else {
-                                            echo ($appointment['schedule_date'] . ", " . $appointment['user_fname'] . ", " . $appointment['user_lname']);
+                                            echo ($appointment['schedule_date'] . ", " . $appointment['appointment_time'] . "; Doctor: " . $appointment['user_fname'] . " " . $appointment['user_lname'] . ", " . $appointment["doctor_specialisation"] . "; Patient: " . $appointment['patient_fname'] . " " . $appointment['patient_lname']);
                                         } ?>
                                     </option>
                                 <?php } ?>

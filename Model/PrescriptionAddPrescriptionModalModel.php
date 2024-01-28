@@ -28,7 +28,7 @@ require_once '../Commons/JeevaniDB.php';
     function InsertPrescription($con, $appointmentId, $medicineId, $qty){
 
         //Prepare and Execute SQL statement to Insert the new prescription:
-        $sql = "INSERT INTO prescription(prescription_appointment_id, prescription_medicine_id, prescription_medicine_qty) VALUES (?, ?, ?);";
+        $sql = "INSERT INTO prescription(prescription_id, prescription_appointment_id, prescription_medicine_id, prescription_medicine_qty) VALUES (?, ?, ?, ?);";
 
         $stmt = mysqli_stmt_init($con);  
 
@@ -39,7 +39,7 @@ require_once '../Commons/JeevaniDB.php';
             exit();
         }
 
-        mysqli_stmt_bind_param($stmt, "sss", $appointmentId, $medicineId, $qty);
+        mysqli_stmt_bind_param($stmt, "ssss", $appointmentId, $appointmentId, $medicineId, $qty);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
 
