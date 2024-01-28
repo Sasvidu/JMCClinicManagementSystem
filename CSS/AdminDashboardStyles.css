@@ -1,68 +1,103 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-@keyframes RibbonItemsAnimation{
-    from{
-        opacity: 0;
-        filter: blur(3px);
-        transform: translateX(-25%);
-    }
-    to{
-        opacity: 1;
-        filter: blur(0px);
-        transform: translateX(0);
-    }
-    
+@keyframes RibbonItemsAnimation {
+  from {
+    opacity: 0;
+    filter: blur(3px);
+    transform: translateX(-25%);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+  }
 }
 
-body{
-    overflow-x: hidden;
+body {
+  overflow-x: hidden;
 }
 
-.container-fluid{
-    padding-left: 0;
-    padding-right: 0;
-
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.ribbon{
-    background-image: linear-gradient(to right bottom, #1154b1, #1858b8, #1d5dbf, #2361c7, #2866ce);
-    /* background-color: #1154b1; */
-    /*background-image: linear-gradient(to right bottom, #4454c5, #445ac7, #4460c8, #4565ca, #476bcb);*/
-    /*background-image: linear-gradient(to right bottom, #535fb2, #5263b8, #5167bd, #4f6bc3, #4d6fc9);*/
-    /*background-image: linear-gradient(to right bottom, #4c80cf, #4878ca, #4571c4, #4269bf, #4061b9);*/
-    box-shadow: 0 0 0 #888888;
-    margin-left: 0;
-    margin-right: 0;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    padding-left: 2rem;
-    padding-right: 1.5rem;
-    color: white;
-    font-family: 'Nunito Sans', sans-serif;
-    z-index: 1;
+.ribbon {
+  background-image: linear-gradient(
+    to right bottom,
+    #1154b1,
+    #1858b8,
+    #1d5dbf,
+    #2361c7,
+    #2866ce
+  );
+  /* background-color: #1154b1; */
+  /*background-image: linear-gradient(to right bottom, #4454c5, #445ac7, #4460c8, #4565ca, #476bcb);*/
+  /*background-image: linear-gradient(to right bottom, #535fb2, #5263b8, #5167bd, #4f6bc3, #4d6fc9);*/
+  /*background-image: linear-gradient(to right bottom, #4c80cf, #4878ca, #4571c4, #4269bf, #4061b9);*/
+  box-shadow: 0 0 0 #888888;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 1.5rem;
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+  z-index: 1;
 }
 
-.title-content{
-    background-color: white;
-    box-shadow: 0 0 15px 0px #c6c5c5;
-    padding-top: 0.5rem;
-    padding-left: 2.5rem;
-    height: 4.5rem;
-    color: #1154b1;
-    z-index: 0;
+.title-content {
+  background-color: white;
+  box-shadow: 0 0 15px 0px #c6c5c5;
+  padding-top: 0.5rem;
+  padding-left: 2.5rem;
+  height: 4.5rem;
+  color: #1154b1;
+  z-index: 0;
 }
 
-.main-content{
-    background-color: #f9f9f9;
-    margin-left: 0;
-    margin-right: 0;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    min-height: 140vh;
-    z-index: 2; 
+.main-content {
+  background-color: #f9f9f9;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  min-height: 140vh;
+  z-index: 2;
 }
 
+.card-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+}
+
+.card-title {
+  color: black;
+}
+
+.card-text {
+  color: black;
+}
+
+.message-item {
+  margin: 0.2rem;
+  padding: 1rem;
+  border: #bdbdbd solid 0.125rem;
+  border-radius: 0.65rem;
+  background-color: white;
+  color: black;
+}
+
+.messages-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Montserrat;
+}

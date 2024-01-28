@@ -1,37 +1,114 @@
-.btn-themed-primary{
-    background-image: linear-gradient(to right bottom, #1154b1, #1858b8, #1d5dbf, #2361c7, #2866ce);
-    color: white;
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.btn-themed-primary {
+  background-image: linear-gradient(
+    to right bottom,
+    #1154b1,
+    #1858b8,
+    #1d5dbf,
+    #2361c7,
+    #2866ce
+  );
+  color: white;
 }
 
-.btn-themed-success{
-    background-image: linear-gradient(to left top, #60f146, #5bef4d, #56ec54, #51ea5a, #4de760);
-    /*background-image: linear-gradient(to right bottom, #40c864, #37c86e, #2dc878, #24c881, #1cc88a);*/
-    color: white;
+.btn-themed-success {
+  background-image: linear-gradient(
+    to left top,
+    #60f146,
+    #5bef4d,
+    #56ec54,
+    #51ea5a,
+    #4de760
+  );
+  /*background-image: linear-gradient(to right bottom, #40c864, #37c86e, #2dc878, #24c881, #1cc88a);*/
+  color: white;
 }
 
-.btn-themed-danger{
-    background-image: linear-gradient(to left top, #f1465a, #ed425b, #e93f5c, #e53b5c, #e1385d);
-    /*background-image: linear-gradient(to left top, #f14646, #ed4246, #e93f46, #e53b46, #e13846);*/
-    color: white;
+.btn-themed-danger {
+  background-image: linear-gradient(
+    to left top,
+    #f1465a,
+    #ed425b,
+    #e93f5c,
+    #e53b5c,
+    #e1385d
+  );
+  /*background-image: linear-gradient(to left top, #f14646, #ed4246, #e93f46, #e53b46, #e13846);*/
+  color: white;
 }
 
-.btn-themed-info{
-    background-image: linear-gradient(to right bottom, #2ec8e1, #2fcae0, #31ccde, #34cedd, #37d0db);
-    color: white
+.btn-themed-info {
+  background-image: linear-gradient(
+    to right bottom,
+    #2ec8e1,
+    #2fcae0,
+    #31ccde,
+    #34cedd,
+    #37d0db
+  );
+  color: white;
 }
 
-.btn-themed-warning{
-    background-image: linear-gradient(to right bottom, #f6c23e, #f7cb3d, #f7d43d, #f7dd3d, #f6e63e);
-    color: white
+.btn-themed-warning {
+  background-image: linear-gradient(
+    to right bottom,
+    #f6c23e,
+    #f7cb3d,
+    #f7d43d,
+    #f7dd3d,
+    #f6e63e
+  );
+  color: white;
 }
 
-.btn-themed-violet{
-    background-image: linear-gradient(to right bottom, #9b87da, #a380e4, #ad77ec, #ba6cf2, #c95ef6);
-    color: white
+.btn-themed-violet {
+  background-image: linear-gradient(
+    to right bottom,
+    #9b87da,
+    #a380e4,
+    #ad77ec,
+    #ba6cf2,
+    #c95ef6
+  );
+  color: white;
 }
 
+.card-themed-primary {
+  border-left: 0.5rem solid #1154b1;
+  font-family: Montserrat;
+  font-weight: 700;
+  color: #1154b1;
+}
 
+.card-themed-success {
+  border-left: 0.5rem solid #60f146;
+  font-family: Montserrat;
+  font-weight: 700;
+  color: #60f146;
+}
 
+.card-themed-lilac {
+  border-left: 0.5rem solid #ba6cf2;
+  font-family: Montserrat;
+  font-weight: 700;
+  color: #ba6cf2;
+}
+
+.card-themed-danger {
+  border-left: 0.5rem solid #f1465a;
+  font-family: Montserrat;
+  font-weight: 700;
+  color: #f1465a;
+}
+
+.card-body-themed {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0.25rem;
+}
 
 /* 
 blueish - #4e73df

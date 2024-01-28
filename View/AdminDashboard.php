@@ -1,6 +1,7 @@
 <?php
 
 require_once "../Model/Session.php";
+require_once "../Model/AdminDashboardInitializationModel.php";
 
 ?>
 
@@ -23,7 +24,7 @@ require_once "../Model/Session.php";
     <link rel="stylesheet" type="text/css" href="../CSS/Utilities.css">
 
     <!--Link to Original Script -->
-    <script defer src="../JS/AdminDashboardJS.js"></script>
+    <!-- <script defer src="../JS/AdminDashboardJS.js"></script> -->
 
      <!--Link to fontawesome icons -->
     <script src="https://kit.fontawesome.com/0c49cb8566.js" crossorigin="anonymous"></script>
@@ -223,17 +224,159 @@ require_once "../Model/Session.php";
 
                     <div class="col-12 main-content">
 
-                        <button type="button" class="btn btn-block btn-themed-primary">Try Clicking Me</button>
+                        <div class="row" style="margin-left: 0.125rem">
 
-                        <button type="button" class="btn btn-block btn-themed-success">Try Clicking Me</button>
+                            <div class="card card-themed-primary" style="width: 20.5rem; margin-right: 1rem;">
+                                <div class="card-body card-body-themed row">
+                                    <div class="col-9">
+                                        <h5 class="card-title">Medicines</h5>
+                                        <p class="card-text"><?php echo(getMedicineCount()); ?></p>
+                                    </div>
+                                    <div class="col-3 card-icon">
+                                        <i class="fa-solid fa-capsules"></i>
+                                    </div>
+                                </div>
+                            </div>
 
-                        <button type="button" class="btn btn-block btn-themed-danger">Try Clicking Me</button>
+                            <div class="card card-themed-success" style="width: 21rem; margin-right: 1rem;">
+                                <div class="card-body card-body-themed row">
+                                    <div class="col-9">
+                                        <h5 class="card-title">Doctors</h5>
+                                        <p class="card-text"><?php echo(getDoctorCount()); ?></p>
+                                    </div>
+                                    <div class="col-3 card-icon">
+                                        <i class="fa-solid fa-user-doctor"></i>
+                                    </div>
+                                </div>
+                            </div>
+ 
+                            <div class="card card-themed-danger" style="width: 21rem; margin-right: 1rem;">
+                                <div class="card-body card-body-themed row">
+                                    <div class="col-9">
+                                        <h5 class="card-title">Pending Payments</h5>
+                                        <p class="card-text"><?php echo(getTotalSupplierPendingPayment()); ?></p>
+                                    </div>
+                                    <div class="col-3 card-icon">
+                                        <i class="fa-solid fa-money-bill"></i>                                
+                                    </div>
+                                </div>
+                            </div>
 
-                        <button type="button" class="btn btn-block btn-themed-info">Try Clicking Me</button>
+                            <div class="card card-themed-lilac" style="width: 21rem;">
+                                <div class="card-body card-body-themed row">
+                                    <div class="col-9">
+                                        <h5 class="card-title">Daily Appointments</h5>
+                                        <p class="card-text"><?php echo(getDailyAppointmentCount()); ?></p>
+                                    </div>
+                                    <div class="col-3 card-icon">
+                                        <i class="fa-regular fa-calendar-check"></i>                                    
+                                    </div>
+                                </div>
+                            </div>
 
-                        <button type="button" class="btn btn-block btn-themed-warning">Try Clicking Me</button>
+                        </div>
 
-                        <button type="button" class="btn btn-block btn-themed-violet">Try Clicking Me</button>
+                        <div class="row">
+
+                            <div class="col-12">&nbsp;</div>
+                            <div class="col-12">&nbsp;</div>
+                            <div class="col-12">&nbsp;</div>
+                            <div class="col-12"><h2 class="messages-title">Messages</h2></div>
+                            <div class="col-12">&nbsp;</div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="accordion" id="messageList">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Medicine Module
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#messageList">
+                                        <div class="accordion-body">
+                                            <?php 
+                                                $outOfStockMedicines = getMedicinesWithNoStocksCreatedFor();
+                                                foreach ($outOfStockMedicines as $outOfStockMedicine) {
+                                                ?><div class="message-item">Stock Not Yet Created for <strong><?php echo($outOfStockMedicine['medicine_name'] . " - " . $outOfStockMedicine['medicine_batch_no'] . " - " . $outOfStockMedicine['medicine_category'] . " - " . $outOfStockMedicine['medicine_size'] . " - " . $outOfStockMedicine['medicine_company']); ?></strong></div><?php
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                            Inventory Module
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#messageList">
+                                        <div class="accordion-body">
+                                            <?php 
+                                                $belowBufferLevelMedicines = getMedicinesBelowBufferLevel();
+                                                foreach ($belowBufferLevelMedicines as $belowBufferLevelMedicine) {
+                                                ?><div class="message-item">Medicine <strong><?php echo($belowBufferLevelMedicine['medicine_name'] . " - " . $belowBufferLevelMedicine['medicine_batch_no'] . " - " . $belowBufferLevelMedicine['medicine_category'] . " - " . $belowBufferLevelMedicine['medicine_size'] . " - " . $belowBufferLevelMedicine['medicine_company']); ?></strong> below buffer level. (Current Qty: <strong><?php echo($belowBufferLevelMedicine['stock_qty_current']); ?></strong>, Buffer Level: <strong><?php echo($belowBufferLevelMedicine['stock_qty_buffer']); ?></strong>)</div><?php
+                                                }
+                                            ?>
+                                            <br>
+                                            <?php 
+                                                $upaidOrders = getUnpaidOrders();
+                                                foreach ($upaidOrders as $upaidOrder) {
+                                                ?><div class="message-item">Pending payment of <strong><?php echo($upaidOrder['order_price'] - $upaidOrder['order_completed_payment']); ?></strong> for order Id: <strong><?php echo($upaidOrder['order_id']); ?></strong></div><?php
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                            Suppliers Module
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#messageList">
+                                        <div class="accordion-body">
+                                            <?php 
+                                                $creditors = getTradePayables();
+                                                foreach ($creditors as $creditor) {
+                                                ?><div class="message-item">Total <strong>owed to</strong> creditor <strong><?php echo($creditor['supplier_name'] . ", " . $creditor['supplier_origin']); ?></strong> is <strong><?php echo($creditor['supplier_pending_payment']); ?></strong></div><?php
+                                                }
+                                            ?>
+                                            <br>
+                                            <?php 
+                                                $debtors = getTradeReceivables();
+                                                foreach ($debtors as $debtor) {
+                                                ?><div class="message-item">Total <strong>owed by</strong> debtor <strong><?php echo($debtor['supplier_name'] . ", " . $debtor['supplier_origin']); ?></strong> is <strong><?php echo(abs($debtor['supplier_pending_payment']) . ".00"); ?></strong></div><?php
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                            Schedules Module
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse show" data-bs-parent="#messageList">
+                                        <div class="accordion-body">
+                                            <?php 
+                                                $doctorsWithoutSchedulesTomorrow = getDoctorsWithoutScheduleTomorrow();
+                                                foreach ($doctorsWithoutSchedulesTomorrow as $doctorsWithoutSchedulesTomorrow) {
+                                                ?><div class="message-item">Schedule for Tomorrow not created for Doctor <strong><?php echo($doctorsWithoutSchedulesTomorrow['user_fname'] . " " . $doctorsWithoutSchedulesTomorrow['user_lname'] . ", " . $doctorsWithoutSchedulesTomorrow['doctor_specialisation']); ?></strong></div><?php
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
 
                     </div>
 
@@ -245,9 +388,10 @@ require_once "../Model/Session.php";
 
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-GLhlTQ8iEWD5RHvYYNl7+5UAW5JVgDOW9aXl9FX0r2miq7/gkC5FpSkEbsKUFAH6" crossorigin="anonymous" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
     
 </body>
 
