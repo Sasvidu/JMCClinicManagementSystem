@@ -1,1 +1,3 @@
 Patient: thumuditha@gmail.com, Thumu1234
+Clerk: 	kaveesha@gmail.com, Kaveesha123#
+Doctor: johann@gmail.com, Johann123#

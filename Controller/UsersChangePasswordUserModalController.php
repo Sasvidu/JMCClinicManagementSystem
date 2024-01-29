@@ -18,7 +18,7 @@
 
         //Load data from view:
         $id = $_POST['Id'];
-        $password = $_POST['Password'];
+        $password = $_POST['NewPassword'];
         $rePassword = $_POST['RePassword'];
 
         //Load the database connection string and model:

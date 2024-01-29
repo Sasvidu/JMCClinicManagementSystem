@@ -65,7 +65,6 @@
                                             <?php if ($userRole === "Admin") { ?>
                                                 <option value="1">Admin</option>
                                             <?php } ?>
-                                            <option value="2">Doctor</option>
                                             <option value="3">Clerk</option>
                                             <option value="4">Patient</option>
                                         </select>

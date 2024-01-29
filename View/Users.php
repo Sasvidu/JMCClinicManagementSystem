@@ -304,7 +304,7 @@ require_once "../Model/UsersInitializationModel.php";
                                                         <?php if($userRole=="Admin") { ?>
                                                             <?php 
                                                                 if($userId==$admin['user_id']){ ?>
-                                                                    <button type="button" class="btn btn-admin btn-sm btn-success" name="changePasswordButton" id="password<?php echo $admin['user_id'] ?>" onclick="openChangePasswordModal(this.id)"><i class="fa-solid fa-money-bill"></i>&nbsp;Change Password</button>
+                                                                    <button type="button" class="btn btn-admin btn-sm btn-success" name="changePasswordButton" id="password<?php echo $admin['user_id'] ?>" onclick="openChangePasswordModal(this.id)"><i class="fa-solid fa-unlock-keyhole"></i>&nbsp;Change Password</button>
                                                                 <?php } 
                                                             ?>
                                                             <button type="button" class="btn btn-admin btn-sm btn-themed-info" name="editButton" id="edit<?php echo $admin['user_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
@@ -395,7 +395,7 @@ require_once "../Model/UsersInitializationModel.php";
                                                     <td id="UserEmail<?php echo $doctor['user_id']; ?>"> <?php echo $doctor['user_email']; ?></td>
                                                     <td id="UserNIC<?php echo $doctor['user_id']; ?>"> <?php echo $doctor['user_nic']; ?></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-sm btn-success" name="changePasswordButton" id="password<?php echo $doctor['user_id'] ?>" onclick="openChangePasswordModal(this.id)"><i class="fa-solid fa-money-bill"></i>&nbsp;Change Password</button>
+                                                        <button type="button" class="btn btn-sm btn-success" name="changePasswordButton" id="password<?php echo $doctor['user_id'] ?>" onclick="openChangePasswordModal(this.id)"><i class="fa-solid fa-unlock-keyhole"></i>&nbsp;Change Password</button>
                                                         <button type="button" class="btn btn-sm btn-themed-info" name="editButton" id="edit<?php echo $doctor['user_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
                                                         <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $doctor['user_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>                                 
                                                     </td>
@@ -483,7 +483,7 @@ require_once "../Model/UsersInitializationModel.php";
                                                     <td id="UserEmail<?php echo $patient['user_id']; ?>"> <?php echo $patient['user_email']; ?></td>
                                                     <td id="UserNIC<?php echo $patient['user_id']; ?>"> <?php echo $patient['user_nic']; ?></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-sm btn-success" name="changePasswordButton" id="password<?php echo $patient['user_id'] ?>" onclick="openChangePasswordModal(this.id)"><i class="fa-solid fa-money-bill"></i>&nbsp;Change Password</button>
+                                                        <button type="button" class="btn btn-sm btn-success" name="changePasswordButton" id="password<?php echo $patient['user_id'] ?>" onclick="openChangePasswordModal(this.id)"><i class="fa-solid fa-unlock-keyhole"></i>&nbsp;Change Password</button>
                                                         <button type="button" class="btn btn-sm btn-themed-info" name="editButton" id="edit<?php echo $patient['user_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
                                                         <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $patient['user_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
                                                     </td>
@@ -571,7 +571,7 @@ require_once "../Model/UsersInitializationModel.php";
                                                     <td id="UserEmail<?php echo $clerk['user_id']; ?>"> <?php echo $clerk['user_email']; ?></td>
                                                     <td id="UserNIC<?php echo $clerk['user_id']; ?>"> <?php echo $clerk['user_nic']; ?></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-sm btn-success" name="changePasswordButton" id="password<?php echo $clerk['user_id'] ?>" onclick="openChangePasswordModal(this.id)"><i class="fa-solid fa-money-bill"></i>&nbsp;Change Password</button>
+                                                        <button type="button" class="btn btn-sm btn-success" name="changePasswordButton" id="password<?php echo $clerk['user_id'] ?>" onclick="openChangePasswordModal(this.id)"><i class="fa-solid fa-unlock-keyhole"></i>&nbsp;Change Password</button>
                                                         <button type="button" class="btn btn-sm btn-themed-info" name="editButton" id="edit<?php echo $clerk['user_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
                                                         <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $clerk['user_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
                                                     </td>
