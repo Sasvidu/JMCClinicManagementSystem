@@ -290,6 +290,7 @@ require_once "../Model/AppointmentInitializationModel.php";
                                                 <td id="appointmentDoctor<?php echo $appointment['appointment_id']; ?>"> <?php echo ($appointment['doctor_first_name'] . " " . $appointment['doctor_last_name'] . ", " . $appointment['doctor_specialisation']); ?></td>
                                                 <td id="appointmentPatient<?php echo $appointment['appointment_id']; ?>"> <?php echo ($appointment['patient_first_name'] . " " . $appointment['patient_last_name']); ?></td>
                                                 <td>
+                                                    <button type="button" class="btn btn-sm btn-themed-violet btn-action" name="medicalInfoButton" id="medicalInfo<?php echo $appointment['patient_id'] ?>" onclick="openMedicalInfoPage(this.id)"><i class="fa-solid fa-notes-medical"></i>&nbsp;Medical Info</button>
                                                     <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $appointment['appointment_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
                                                 </td>
                                             </tr>

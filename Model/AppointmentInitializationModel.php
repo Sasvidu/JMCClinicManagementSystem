@@ -22,7 +22,8 @@
                 patient_user.user_fname AS patient_first_name,
                 doctor_user.user_fname AS doctor_first_name,
                 patient_user.user_lname AS patient_last_name,
-                doctor_user.user_lname AS doctor_last_name
+                doctor_user.user_lname AS doctor_last_name,
+                patient_user.user_id AS patient_id
             FROM 
                 appointment
             JOIN 
@@ -53,7 +54,8 @@
                 patient_user.user_fname AS patient_first_name,
                 doctor_user.user_fname AS doctor_first_name,
                 patient_user.user_lname AS patient_last_name,
-                doctor_user.user_lname AS doctor_last_name
+                doctor_user.user_lname AS doctor_last_name,
+                patient_user.user_id AS patient_id
             FROM 
                 appointment
             JOIN 
@@ -91,7 +93,8 @@
             patient_user.user_fname AS patient_first_name,
             doctor_user.user_fname AS doctor_first_name,
             patient_user.user_lname AS patient_last_name,
-            doctor_user.user_lname AS doctor_last_name
+            doctor_user.user_lname AS doctor_last_name,
+            patient_user.user_id AS patient_id
         FROM 
             appointment
         JOIN 

@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500");
+
+.flexer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-patientData-action {
+  width: 10rem;
+  font-family: Montserrat;
+}
+
+.TitleTxt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-family: Montserrat;
+}
+
+table {
+  table-layout: auto;
+}
+
+td,
+th {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#Action {
+  width: 5%;
+}

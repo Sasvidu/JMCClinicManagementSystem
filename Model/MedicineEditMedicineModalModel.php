@@ -40,37 +40,6 @@ require_once '../Commons/JeevaniDB.php';
 
     }
 
-    /*
-    function productExists($con, $category, $brand, $name){
-            
-        $sql = "SELECT * FROM product WHERE (product_name = ? AND product_brand = ? AND product_category = ?);";
-
-        $stmt = mysqli_stmt_init($con);  
-
-        if(!mysqli_stmt_prepare($stmt, $sql)){
-            $msg = "Error: MySQL statement Failed";
-            $msg = base64_encode($msg);
-            header("location: ../View/Inventory.php?msg=$msg");
-            exit();
-        }
-
-        mysqli_stmt_bind_param($stmt, "sss", $name, $brand, $category);
-        mysqli_stmt_execute($stmt);
-
-        $resultData = mysqli_stmt_get_result($stmt);
-
-        if($row = mysqli_fetch_assoc($resultData)){
-            return $row;
-        }else{
-            $result = false;
-            return $result;
-        }
-
-        mysqli_stmt_close($stmt);
-
-    }
-    */
-
     //Edit the product:
     function UpdateMedicine($con, $id, $category, $brand, $company, $name, $batch, $size, $price, $info){
 

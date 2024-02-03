@@ -318,6 +318,7 @@ require_once "../Model/PrescriptionInitializationModel.php";
                                                 <td id="prescriptionMedicine<?php echo $prescription['prescription_id']; ?>"> <?php echo ($prescription['medicine_name'] . ", " . $prescription['medicine_category'] . ", " . $prescription['medicine_batch_no']); ?></td>
                                                 <td id="prescriptionQuantity<?php echo $prescription['prescription_id']; ?>"> <?php echo ($prescription['prescription_medicine_qty']); ?></td>
                                                 <td>
+                                                    <button type="button" class="btn btn-sm btn-themed-violet btn-action" name="medicalInfoButton" id="medicalInfo<?php echo $prescription['user_id'] ?>" onclick="openMedicalInfoPage(this.id)"><i class="fa-solid fa-notes-medical"></i>&nbsp;Medical Info</button>
                                                     <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $prescription['prescription_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
                                                 </td>
                                             </tr>

@@ -483,6 +483,7 @@ require_once "../Model/UsersInitializationModel.php";
                                                     <td id="UserEmail<?php echo $patient['user_id']; ?>"> <?php echo $patient['user_email']; ?></td>
                                                     <td id="UserNIC<?php echo $patient['user_id']; ?>"> <?php echo $patient['user_nic']; ?></td>
                                                     <td>
+                                                        <button type="button" class="btn btn-sm btn-themed-violet" name="medicalInfoButton" id="medicalInfo<?php echo $patient['user_id'] ?>" onclick="openMedicalInfoPage(this.id)"><i class="fa-solid fa-notes-medical"></i>&nbsp;Medical Info</button>
                                                         <button type="button" class="btn btn-sm btn-success" name="changePasswordButton" id="password<?php echo $patient['user_id'] ?>" onclick="openChangePasswordModal(this.id)"><i class="fa-solid fa-unlock-keyhole"></i>&nbsp;Change Password</button>
                                                         <button type="button" class="btn btn-sm btn-themed-info" name="editButton" id="edit<?php echo $patient['user_id'] ?>" onclick="openEditModal(this.id)"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
                                                         <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $patient['user_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>

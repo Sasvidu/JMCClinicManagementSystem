@@ -1,3 +1,2 @@
-2. Make the patient data (BMI...) data attachment
 3. Make doctor and patient stuff (make appointment and manage patient data)
 4. Report gen
