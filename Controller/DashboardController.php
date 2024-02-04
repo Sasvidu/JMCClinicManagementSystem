@@ -55,9 +55,46 @@
         }else if($action == "dashboard-submit-users"){
             header("location: ../View/Users.php");
         }else if($action == "dashboard-submit-schedules"){
-            header("location: ../View/Schedules.php");
+
+            $role = $_SESSION['userRole'];
+
+            if($role=="Patient"){
+                //header("location: ../View/Dashboard.php");
+            }else if($role=="Admin"){
+                header("location: ../View/Schedules.php");
+            }else if($role=="Clerk"){
+                header("location: ../View/Schedules.php");
+            }else if($role=="Doctor"){
+                header("location: ../View/DoctorSchedules.php");
+            }else{
+                //If the role name is corrupted, go back to home page:
+                session_destroy();
+                $msg = "Something went wrong, please try logging in.";
+                $msg = base64_encode($msg);
+                header("location: ../View/Home.php?msg=$msg");
+            }
+
         }else if($action == "dashboard-submit-appointments"){
-            header("location: ../View/Appointments.php");
+
+            $role = $_SESSION['userRole'];
+
+            if($role=="Patient"){
+                //header("location: ../View/Dashboard.php");
+            }else if($role=="Admin"){
+                header("location: ../View/Appointments.php");
+            }else if($role=="Clerk"){
+                header("location: ../View/Appointments.php");
+            }else if($role=="Doctor"){
+                header("location: ../View/DoctorAppointments.php");
+            }else{
+                //If the role name is corrupted, go back to home page:
+                session_destroy();
+                $msg = "Something went wrong, please try logging in.";
+                $msg = base64_encode($msg);
+                header("location: ../View/Home.php?msg=$msg");
+            }
+
+            
         }else if($action == "dashboard-submit-prescription-view"){
             header("location: ../View/Prescriptions.php");
         }else{

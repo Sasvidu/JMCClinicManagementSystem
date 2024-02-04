@@ -20,3 +20,13 @@ function openMedicalInfoPage(id) {
     window.open(url, "_blank");
   });
 }
+
+function openAddPrescriptionModal(id) {
+  $(document).ready(function () {
+    var fields = id.split("n");
+    var appointmentId = fields[1];
+
+    $("#AddPrescriptionModal").modal();
+    $(".modal-body #Appointment").val(appointmentId);
+  });
+}

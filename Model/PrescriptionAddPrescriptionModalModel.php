@@ -75,11 +75,17 @@ require_once '../Commons/JeevaniDB.php';
         mysqli_stmt_execute($stmtb);
         mysqli_stmt_close($stmtb);
 
-        //Send success message to the inventory page:
+        $userRole = $_SESSION['userRole'];
         $code = "Prescription added successfully!";
         $code = base64_encode($code);
-        header("location: ../View/Prescriptions.php?msg=$code");
 
+        //Send success message to the relevant page based on the role page:
+        if($userRole == "Doctor"){
+            header("location: ../View/DoctorAppointments.php?msg=$code");
+        }else{
+            header("location: ../View/Prescriptions.php?msg=$code");
+        }
+        
     }
 
 

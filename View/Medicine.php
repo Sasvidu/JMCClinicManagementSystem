@@ -74,115 +74,168 @@ require_once "../Model/MedicineInitializationModel.php";
 
                     <hr>
 
-                    <div class="row">
+                    <?php if($userRole == "Admin" || $userRole == "Clerk") { ?>
+                        
+                        <div class="row">
 
-                        <div class="col-12">
-                            &nbsp;
+                            <div class="col-12">
+                                &nbsp;
+                            </div>
+
+                            <div class="col-12 dashboard-item dashboard-selected-item">
+
+                                <img src="../Commons/icons/bg-removed/medicine-whitepng.png" class="dashboard-item-image">
+                                <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Medicine</span>
+
+                            </div>
+
+                            <div class="col-12">
+                                &nbsp;
+                            </div>
+
+                            <div class="col-12 dashboard-item dashboard-selectable-item">
+
+                                <button name="dashboard-submit" value="dashboard-submit-inventory" type="submit" class="dashboard-btn">
+                                    <img src="../Commons/icons/bg-removed/inventory-white.png" class="dashboard-item-image">
+                                    <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Inventory</span>
+                                </button>
+
+                            </div>
+
+                            <div class="col-12">
+                                &nbsp;
+                            </div>
+
+                            <div class="col-12 dashboard-item dashboard-selectable-item">
+
+                                <button name="dashboard-submit" value="dashboard-submit-suppliers" type="submit" class="dashboard-btn">
+                                    <img src="../Commons/icons/bg-removed/supplier-white.png" class="dashboard-item-image">
+                                    <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Suppliers</span>
+                                </button>
+
+                            </div>
+
+                            <div class="col-12">
+                                &nbsp;
+                            </div>
+
+                            <div class="col-12 dashboard-item dashboard-selectable-item">
+
+                                <button name="dashboard-submit" value="dashboard-submit-doctors" type="submit" class="dashboard-btn">
+                                    <img src="../Commons/icons/bg-removed/doctor-white.png" class="dashboard-item-image">
+                                    <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Doctors</span>
+                                </button>
+
+                            </div>
+
+                            <div class="col-12">
+                                &nbsp;
+                            </div>
+
+                            <div class="col-12 dashboard-item dashboard-selectable-item" style="padding-left: 1rem">
+
+                                <button name="dashboard-submit" value="dashboard-submit-users" type="submit" class="dashboard-btn">
+                                    <img src="../Commons/icons/bg-removed/patient-white.png" class="dashboard-item-image">
+                                    <span class="dashboard-item-text">&nbsp;&nbsp;Users</span>
+                                </button>
+
+                            </div>
+
+                            <div class="col-12">
+                                &nbsp;
+                            </div>
+
+                            <div class="col-12 dashboard-item dashboard-selectable-item">
+
+                                <button name="dashboard-submit" value="dashboard-submit-schedules" type="submit" class="dashboard-btn">
+                                    <img src="../Commons/icons/bg-removed/schedule-white.png" class="dashboard-item-image">
+                                    <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Schedules</span>
+                                </button>
+
+                            </div>
+
+                            <div class="col-12">
+                                &nbsp;
+                            </div>
+
+                            <div class="col-12 dashboard-item dashboard-selectable-item">
+
+                                <button name="dashboard-submit" value="dashboard-submit-appointments" type="submit" class="dashboard-btn">
+                                    <img src="../Commons/icons/bg-removed/appointment-white.png" class="dashboard-item-image">
+                                    <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Appointments</span>
+                                </button>
+
+                            </div>
+
+                            <div class="col-12">
+                                &nbsp;
+                            </div>
+
+                            <div class="col-12 dashboard-item dashboard-selectable-item" style="padding-left: 1rem">
+
+                                <button name="dashboard-submit" value="dashboard-submit-prescription-view" type="submit" class="dashboard-btn">
+                                    <img src="../Commons/icons/bg-removed/prescription-whitepng.png" class="dashboard-item-image">
+                                    <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Prescriptions</span>
+                                </button>   
+
+                            </div>
+
+                            <div class="col-12">
+                                &nbsp;
+                            </div>
+
                         </div>
 
-                        <div class="col-12 dashboard-item dashboard-selected-item">
+                    <?php } elseif($userRole == "Doctor") { ?>
 
-                            <img src="../Commons/icons/bg-removed/medicine-whitepng.png" class="dashboard-item-image">
-                            <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Medicine</span>
+                        <div class="row">
 
-                        </div>
+                            <div class="col-12">
+                                &nbsp;
+                            </div>
 
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
+                            <div class="col-12 dashboard-item">
 
-                        <div class="col-12 dashboard-item dashboard-selectable-item">
+                                <button name="dashboard-submit" value="dashboard-submit-medicine" type="submit" class="dashboard-btn dashboard-selected-item">
+                                    <img src="../Commons/icons/bg-removed/medicine-whitepng.png" class="dashboard-item-image">
+                                    <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Medicine</span>
+                                </button>
 
-                            <button name="dashboard-submit" value="dashboard-submit-inventory" type="submit" class="dashboard-btn">
-                                <img src="../Commons/icons/bg-removed/inventory-white.png" class="dashboard-item-image">
-                                <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Inventory</span>
-                            </button>
+                            </div>
 
-                        </div>
+                            <div class="col-12">
+                                &nbsp;
+                            </div>
 
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
+                            <div class="col-12 dashboard-item dashboard-selectable-item">
 
-                        <div class="col-12 dashboard-item dashboard-selectable-item">
+                                <button name="dashboard-submit" value="dashboard-submit-schedules" type="submit" class="dashboard-btn">
+                                    <img src="../Commons/icons/bg-removed/schedule-white.png" class="dashboard-item-image">
+                                    <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;My Schedules</span>
+                                </button>
 
-                            <button name="dashboard-submit" value="dashboard-submit-suppliers" type="submit" class="dashboard-btn">
-                                <img src="../Commons/icons/bg-removed/supplier-white.png" class="dashboard-item-image">
-                                <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Suppliers</span>
-                            </button>
+                            </div>
 
-                        </div>
+                            <div class="col-12">
+                                &nbsp;
+                            </div>
 
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
+                            <div class="col-12 dashboard-item dashboard-selectable-item">
 
-                        <div class="col-12 dashboard-item dashboard-selectable-item">
+                                <button name="dashboard-submit" value="dashboard-submit-appointments" type="submit" class="dashboard-btn">
+                                    <img src="../Commons/icons/bg-removed/appointment-white.png" class="dashboard-item-image">
+                                    <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;My Appointments</span>
+                                </button>
 
-                            <button name="dashboard-submit" value="dashboard-submit-doctors" type="submit" class="dashboard-btn">
-                                <img src="../Commons/icons/bg-removed/doctor-white.png" class="dashboard-item-image">
-                                <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Doctors</span>
-                            </button>
+                            </div>
 
-                        </div>
-
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
-
-                        <div class="col-12 dashboard-item dashboard-selectable-item" style="padding-left: 1rem">
-
-                            <button name="dashboard-submit" value="dashboard-submit-users" type="submit" class="dashboard-btn">
-                                <img src="../Commons/icons/bg-removed/patient-white.png" class="dashboard-item-image">
-                                <span class="dashboard-item-text">&nbsp;&nbsp;Users</span>
-                            </button>
+                            <div class="col-12">
+                                &nbsp;
+                            </div>                                                      
 
                         </div>
 
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
-
-                        <div class="col-12 dashboard-item dashboard-selectable-item">
-
-                            <button name="dashboard-submit" value="dashboard-submit-schedules" type="submit" class="dashboard-btn">
-                                <img src="../Commons/icons/bg-removed/schedule-white.png" class="dashboard-item-image">
-                                <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Schedules</span>
-                            </button>
-
-                        </div>
-
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
-
-                        <div class="col-12 dashboard-item dashboard-selectable-item">
-
-                            <button name="dashboard-submit" value="dashboard-submit-appointments" type="submit" class="dashboard-btn">
-                                <img src="../Commons/icons/bg-removed/appointment-white.png" class="dashboard-item-image">
-                                <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Appointments</span>
-                            </button>
-
-                        </div>
-
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
-
-                        <div class="col-12 dashboard-item dashboard-selectable-item" style="padding-left: 1rem">
-
-                            <button name="dashboard-submit" value="dashboard-submit-prescription-view" type="submit" class="dashboard-btn">
-                                <img src="../Commons/icons/bg-removed/prescription-whitepng.png" class="dashboard-item-image">
-                                <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Prescriptions</span>
-                            </button>   
-
-                        </div>
-
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
-
-                    </div>
+                    <?php } ?>
 
                     <hr>
 

@@ -4,9 +4,18 @@ require_once "../Commons/JeevaniDB.php";
 $thisDBConnection = new DbConnection();
 $myCon = $thisDBConnection->con;
 
-$sql = "SELECT * FROM doctor JOIN user ON doctor.doctor_user_id = user.user_id WHERE doctor_status=1 ORDER BY doctor_id ASC;";
-$result = $myCon->query($sql) or die($myCon->error);
-$resCheck = mysqli_num_rows($result);
+$userRole = $_SESSION["userRole"];
+
+if($userRole == "Doctor"){
+    $userId = $_SESSION["userId"];
+    $sql = "SELECT * FROM doctor JOIN user ON doctor.doctor_user_id = user.user_id WHERE user_id = '$userId' AND doctor_status = 1 ORDER BY doctor_id ASC;";
+    $result = $myCon->query($sql) or die($myCon->error);
+    $resCheck = mysqli_num_rows($result);
+}else{
+    $sql = "SELECT * FROM doctor JOIN user ON doctor.doctor_user_id = user.user_id WHERE doctor_status = 1 ORDER BY doctor_id ASC;";
+    $result = $myCon->query($sql) or die($myCon->error);
+    $resCheck = mysqli_num_rows($result);
+}
 
 if ($resCheck > 0) {
     $doctors = $result->fetch_all(MYSQLI_ASSOC);
@@ -18,7 +27,7 @@ if ($resCheck > 0) {
     exit();
 }
 
-$sqlNew = "SELECT * FROM user WHERE user_role_id=4 AND user_status=1 ORDER BY user_id ASC;";
+$sqlNew = "SELECT * FROM user WHERE user_role_id = 4 AND user_status = 1 ORDER BY user_id ASC;";
 $resultNew = $myCon->query($sqlNew) or die($myCon->error);
 $resCheckNew = mysqli_num_rows($resultNew);
 
