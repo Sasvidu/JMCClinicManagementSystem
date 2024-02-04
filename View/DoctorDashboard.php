@@ -1,7 +1,16 @@
 <?php
 
 require_once "../Model/Session.php";
-require_once "../Model/AdminDashboardInitializationModel.php";
+require_once "../Model/DoctorDashboardInitializationModel.php";
+
+$userId = $_SESSION['userId'];
+$doctor = getDoctorInfoByUserId($userId);
+$doctorId = $doctor['doctor_id'];
+
+$hasScheduleToday = hasScheduleForToday($doctorId);
+$hasScheduleTomorrow = hasScheduleForTomorrow($doctorId);
+
+$upcomingAppointments = getUpcomingAppointments($doctorId);
 
 ?>
 
@@ -190,7 +199,7 @@ require_once "../Model/AdminDashboardInitializationModel.php";
                                 <div class="card-body card-body-themed row">
                                     <div class="col-9">
                                         <h5 class="card-title">Upcoming Appointments</h5>
-                                        <p class="card-text">#</p>
+                                        <p class="card-text"><?php echo (getDoctorUpcomingAppointmentsCount($doctorId)); ?></p>
                                     </div>
                                     <div class="col-3 card-icon">
                                         <i class="fa-regular fa-calendar-days"></i>                                    
@@ -202,7 +211,7 @@ require_once "../Model/AdminDashboardInitializationModel.php";
                                 <div class="card-body card-body-themed row">
                                     <div class="col-9">
                                         <h5 class="card-title">Today's Appointments</h5>
-                                        <p class="card-text">#</p>
+                                        <p class="card-text"><?php echo (getDoctorAppointmentsCountToday($doctorId)); ?></p>
                                     </div>
                                     <div class="col-3 card-icon">
                                         <i class="fa-regular fa-clock"></i>                                    
@@ -214,7 +223,7 @@ require_once "../Model/AdminDashboardInitializationModel.php";
                                 <div class="card-body card-body-danger row">
                                     <div class="col-9">
                                         <h5 class="card-title">Prescriptions to be Issued</h5>
-                                        <p class="card-text">#</p>
+                                        <p class="card-text"><?php echo (getPendingPrescriptionCount($doctorId)); ?></p>
                                     </div>
                                     <div class="col-3 card-icon">
                                         <i class="fa-solid fa-clipboard-list"></i>                                 
@@ -245,7 +254,25 @@ require_once "../Model/AdminDashboardInitializationModel.php";
                                     </h2>
                                     <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#messageList">
                                         <div class="accordion-body">
-                                            <div class="message-item">Tell Today's and Tomorrow's schedule made or not</div>
+                                            <?php if ($hasScheduleToday) { ?>
+                                                <div class="message-item">
+                                                    You <strong>have</strong> a schedule for <strong>today</strong>.
+                                                </div>
+                                            <?php } else { ?>
+                                                <div class="message-item">
+                                                    You <strong>don't have</strong> a schedule for <strong>today</strong>.
+                                                </div>
+                                            <?php } ?>
+
+                                            <?php if ($hasScheduleTomorrow) { ?>
+                                                <div class="message-item">
+                                                    You <strong>have</strong> a schedule for <strong>tomorrow</strong>.
+                                                </div>
+                                            <?php } else { ?>
+                                                <div class="message-item">
+                                                    You <strong>don't have</strong> a schedule for <strong>tomorrow</strong>.
+                                                </div>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </div>
@@ -258,7 +285,26 @@ require_once "../Model/AdminDashboardInitializationModel.php";
                                     </h2>
                                     <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#messageList">
                                         <div class="accordion-body">
-                                            <div class="message-item">Show all the appointments</div>
+                                            <?php foreach($upcomingAppointments as $apppointment) { ?>
+                                                <div class="message-item">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <strong>Date:</strong> <?php echo $apppointment['schedule_date'] ?>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <strong>Time:</strong> <?php echo $apppointment['appointment_time'] ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <strong>Patient:</strong> <?php echo $apppointment['patient_fname'] . " " . $apppointment['patient_lname'] ?>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <strong>Doctor:</strong> <?php echo $userName ?>
+                                                        </div>
+                                                    </div>         
+                                                </div>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </div>

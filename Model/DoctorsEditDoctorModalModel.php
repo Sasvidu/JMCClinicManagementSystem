@@ -158,7 +158,6 @@ require_once '../Commons/JeevaniDB.php';
 
         $stmta = mysqli_stmt_init($con);  
 
-
         if(!mysqli_stmt_prepare($stmta, $sqla)){
             $msg = "Error: MySQL statement 2 Failed";
             $msg = base64_encode($msg);

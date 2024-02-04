@@ -265,6 +265,13 @@ if($patientDataExists){
 
                         <div class="row">
 
+                            <?php if(!$patientDataExists) { ?>
+                                <div class="row">
+                                    <div class="col-12">&nbsp;</div>
+                                    <div class="col-12 flexer" style="color: red;"><p>The medical information of the patient has not been provided yet. Please submit the form to record the medical information of the patient.</p></div>
+                                </div>   
+                            <?php } ?>
+
                             <form action="../Controller/PatientMedicalInfoController.php?status=true" method="post" class="mt-4">
 
                                 <input type="hidden" name="userId" value='<?php echo $patient['user_id']; ?>'>
