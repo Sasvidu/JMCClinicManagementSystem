@@ -95,19 +95,6 @@ $upcomingAppointments = getPatientUpcomingAppointments($userId);
 
                         <div class="col-12 dashboard-item dashboard-selectable-item" style="padding-left: 1rem">
 
-                            <button name="dashboard-submit" value="dashboard-submit-prescription-view" type="submit" class="dashboard-btn">
-                                <img src="../Commons/icons/bg-removed/prescription-whitepng.png" class="dashboard-item-image">
-                                <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Prescriptions</span>
-                            </button>   
-
-                        </div>
-
-                        <div class="col-12">
-                            &nbsp;
-                        </div>
-
-                        <div class="col-12 dashboard-item dashboard-selectable-item" style="padding-left: 1rem">
-
                             <button name="dashboard-submit" value="dashboard-submit-patient-view" type="submit" class="dashboard-btn">
                                 <img src="../Commons/icons/bg-removed/patient-white.png" class="dashboard-item-image">
                                 <span class="dashboard-item-text">&nbsp;&nbsp;My Info</span>

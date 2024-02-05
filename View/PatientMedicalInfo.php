@@ -104,6 +104,44 @@ if($patientDataExists){
 
                     <hr>
 
+                    <?php if($userRole == "Patient") { ?>
+
+                    <div class="row">
+
+                        <div class="col-12">
+                            &nbsp;
+                        </div>
+
+                        <div class="col-12 dashboard-item dashboard-selectable-item">
+
+                            <button name="dashboard-submit" value="dashboard-submit-appointment-view" type="submit" class="dashboard-btn">
+                                <img src="../Commons/icons/bg-removed/appointment-white.png" class="dashboard-item-image">
+                                <span class="dashboard-item-text">&nbsp;&nbsp;&nbsp;Appointments</span>
+                            </button>
+
+                        </div>
+
+                        <div class="col-12">
+                            &nbsp;
+                        </div>
+
+                        <div class="col-12 dashboard-item" style="padding-left: 1rem">
+
+                            <button name="dashboard-submit" value="dashboard-submit-patient-view" type="submit" class="dashboard-btn dashboard-selected-item">
+                                <img src="../Commons/icons/bg-removed/patient-white.png" class="dashboard-item-image">
+                                <span class="dashboard-item-text">&nbsp;&nbsp;My Info</span>
+                            </button>
+
+                        </div>
+
+                        <div class="col-12">
+                            &nbsp;
+                        </div>
+
+                    </div>
+
+                    <?php } else { ?>
+
                     <div class="row">
 
                         <div class="col-12">
@@ -216,6 +254,8 @@ if($patientDataExists){
 
                     </div>
 
+                    <?php } ?>
+
                     <hr>
 
                     <div class="row">
@@ -282,7 +322,7 @@ if($patientDataExists){
 
                                     <div class="col-md-6">
                                         <label for="bloodGroup" class="form-label">Blood Group:</label>
-                                        <select id="bloodGroup" name="bloodGroup" class="form-select" <?php echo $patientData['patientdata_bloodGroup'] ? 'readonly' : ''; ?>>
+                                        <select id="bloodGroup" name="bloodGroup" class="form-select" <?php echo $patientData['patientdata_bloodGroup'] ? 'readonly' : ''; ?> <?php echo $userRole == 'Patient' ? 'readonly' : ''; ?>>
                                             <option value="O+" <?php echo ($patientData['patientdata_bloodGroup'] == 'O+') ? 'selected' : ''; ?>>O+</option>
                                             <option value="O-" <?php echo ($patientData['patientdata_bloodGroup'] == 'O-') ? 'selected' : ''; ?>>O-</option>
                                             <option value="A+" <?php echo ($patientData['patientdata_bloodGroup'] == 'A+') ? 'selected' : ''; ?>>A+</option>
@@ -296,14 +336,14 @@ if($patientDataExists){
 
                                     <div class="col-md-6">
                                         <label for="allergies" class="form-label">Allergies:</label>
-                                        <textarea id="allergies" name="allergies" rows="4" class="form-control"><?php echo $patientData['patientdata_allergies']; ?></textarea>
+                                        <textarea id="allergies" name="allergies" rows="4" class="form-control" <?php echo $userRole == 'Patient' ? 'readonly' : ''; ?>><?php echo $patientData['patientdata_allergies']; ?></textarea>
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-md-6">
                                         <label for="heartDisease" class="form-label">Heart Disease:</label>
-                                        <select id="heartDisease" name="heartDisease" class="form-select">
+                                        <select id="heartDisease" name="heartDisease" class="form-select" <?php echo $userRole == 'Patient' ? 'readonly' : ''; ?>>
                                             <option value="1" <?php echo $patientData['patientdata_heartDisease'] ? 'selected' : ''; ?>>Yes</option>
                                             <option value="0" <?php echo !$patientData['patientdata_heartDisease'] ? 'selected' : ''; ?>>No</option>
                                         </select>
@@ -311,7 +351,7 @@ if($patientDataExists){
 
                                     <div class="col-md-6">
                                         <label for="highBloodPressure" class="form-label">High Blood Pressure:</label>
-                                        <select id="highBloodPressure" name="highBloodPressure" class="form-select">
+                                        <select id="highBloodPressure" name="highBloodPressure" class="form-select" <?php echo $userRole == 'Patient' ? 'readonly' : ''; ?>>
                                             <option value="1" <?php echo $patientData['patientdata_highBloodPressure'] ? 'selected' : ''; ?>>Yes</option>
                                             <option value="0" <?php echo !$patientData['patientdata_highBloodPressure'] ? 'selected' : ''; ?>>No</option>
                                         </select>
@@ -321,7 +361,7 @@ if($patientDataExists){
                                 <div class="row mb-3">
                                     <div class="col-md-6">
                                         <label for="accident" class="form-label">Accident:</label>
-                                        <select id="accident" name="accident" class="form-select">
+                                        <select id="accident" name="accident" class="form-select" <?php echo $userRole == 'Patient' ? 'readonly' : ''; ?>>
                                             <option value="1" <?php echo $patientData['patientdata_accident'] ? 'selected' : ''; ?>>Yes</option>
                                             <option value="0" <?php echo !$patientData['patientdata_accident'] ? 'selected' : ''; ?>>No</option>
                                         </select>
@@ -329,7 +369,7 @@ if($patientDataExists){
 
                                     <div class="col-md-6">
                                         <label for="diabetes" class="form-label">Diabetes:</label>
-                                        <select id="diabetes" name="diabetes" class="form-select">
+                                        <select id="diabetes" name="diabetes" class="form-select" <?php echo $userRole == 'Patient' ? 'readonly' : ''; ?>>
                                             <option value="1" <?php echo $patientData['patientdata_diabetes'] ? 'selected' : ''; ?>>Yes</option>
                                             <option value="0" <?php echo !$patientData['patientdata_diabetes'] ? 'selected' : ''; ?>>No</option>
                                         </select>
@@ -339,7 +379,7 @@ if($patientDataExists){
                                 <div class="row mb-3">
                                     <div class="col-md-6">
                                         <label for="surgery" class="form-label">Surgery:</label>
-                                        <select id="surgery" name="surgery" class="form-select">
+                                        <select id="surgery" name="surgery" class="form-select" <?php echo $userRole == 'Patient' ? 'readonly' : ''; ?>>
                                             <option value="1" <?php echo $patientData['patientdata_surgery'] ? 'selected' : ''; ?>>Yes</option>
                                             <option value="0" <?php echo !$patientData['patientdata_surgery'] ? 'selected' : ''; ?>>No</option>
                                         </select>
@@ -347,7 +387,7 @@ if($patientDataExists){
 
                                     <div class="col-md-6">
                                         <label for="cholesterol" class="form-label">Cholesterol:</label>
-                                        <select id="cholesterol" name="cholesterol" class="form-select">
+                                        <select id="cholesterol" name="cholesterol" class="form-select" <?php echo $userRole == 'Patient' ? 'readonly' : ''; ?>>
                                             <option value="1" <?php echo $patientData['patientdata_cholesterol'] ? 'selected' : ''; ?>>Yes</option>
                                             <option value="0" <?php echo !$patientData['patientdata_cholesterol'] ? 'selected' : ''; ?>>No</option>
                                         </select>
@@ -357,14 +397,14 @@ if($patientDataExists){
                                 <div class="row mb-3">
                                     <div class="col-12">
                                         <label for="description" class="form-label">Description:</label>
-                                        <textarea id="description" name="description" rows="4" class="form-control"><?php echo $patientData['patientdata_description']; ?></textarea>
+                                        <textarea id="description" name="description" rows="4" class="form-control" <?php echo $userRole == 'Patient' ? 'readonly' : ''; ?>><?php echo $patientData['patientdata_description']; ?></textarea>
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-12">
                                         <label for="familyHistory" class="form-label">Family Medical History:</label>
-                                        <textarea id="familyHistory" name="familyHistory" rows="4" class="form-control"><?php echo $patientData['patientdata_history']; ?></textarea>
+                                        <textarea id="familyHistory" name="familyHistory" rows="4" class="form-control" <?php echo $userRole == 'Patient' ? 'readonly' : ''; ?>><?php echo $patientData['patientdata_history']; ?></textarea>
                                     </div>
                                 </div>
 
@@ -373,14 +413,18 @@ if($patientDataExists){
 
                                     <div class="col-12">&nbsp;</div>
 
-                                    <?php if($patientDataExists){ ?>
-                                        <div class="col-12 flexer">
-                                            <input type="submit" value="Edit Medical Info" class="btn btn-primary btn-patientData-action">
-                                        </div>
-                                    <?php } else { ?>
-                                        <div class="col-12 flexer">
-                                            <input type="submit" value="Add Medical Info" class="btn btn-themed-success btn-patientData-action">
-                                        </div>
+                                    <?php if($userRole != "Patient") { ?>
+
+                                        <?php if($patientDataExists){ ?>
+                                            <div class="col-12 flexer">
+                                                <input type="submit" value="Edit Medical Info" class="btn btn-primary btn-patientData-action">
+                                            </div>
+                                        <?php } else { ?>
+                                            <div class="col-12 flexer">
+                                                <input type="submit" value="Add Medical Info" class="btn btn-themed-success btn-patientData-action">
+                                            </div>
+                                        <?php } ?>
+                                    
                                     <?php } ?>
 
                                 </div>

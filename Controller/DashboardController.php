@@ -29,7 +29,7 @@
             $role = $_SESSION['userRole'];
 
             if($role=="Patient"){
-                header("location: ../View/Dashboard.php");
+                header("location: ../View/PatientDashboard.php");
             }else if($role=="Admin"){
                 header("location: ../View/AdminDashboard.php");
             }else if($role=="Clerk"){
@@ -97,6 +97,9 @@
             
         }else if($action == "dashboard-submit-prescription-view"){
             header("location: ../View/Prescriptions.php");
+        }else if($action == "dashboard-submit-patient-view"){
+            $userId = $_SESSION['userId'];
+            header("location: ../View/PatientMedicalInfo.php?id=$userId");
         }else{
 
             //If the action is not defined, go back to home page:
