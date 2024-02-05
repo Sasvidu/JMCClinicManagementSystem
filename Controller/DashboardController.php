@@ -100,6 +100,8 @@
         }else if($action == "dashboard-submit-patient-view"){
             $userId = $_SESSION['userId'];
             header("location: ../View/PatientMedicalInfo.php?id=$userId");
+        }else if($action == "dashboard-submit-appointment-view"){
+            header("location: ../View/PatientAppointments.php?id=$userId");
         }else{
 
             //If the action is not defined, go back to home page:
