@@ -20,3 +20,14 @@ function openMedicalInfoPage(id) {
     window.open(url, "_blank");
   });
 }
+
+//Generate Prescription Report
+function openPrescriptionReport(id) {
+  var fields = id.split("n");
+  var prescriptionId = fields[1];
+
+  window.open(
+    "PrescriptionInvoice.php?status=true&id=" + prescriptionId,
+    "_blank"
+  );
+}

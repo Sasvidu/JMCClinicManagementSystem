@@ -86,6 +86,14 @@ function openOrderModal(id) {
   });
 }
 
+//Generate Order Invoice
+function openOrderInvoice(id) {
+  var fields = id.split("-");
+  var orderId = fields[1];
+
+  window.open("OrderReceipt.php?status=true&id=" + orderId, "_blank");
+}
+
 //Submit the limit change upon change in value:
 function changeLimits() {
   $(document).ready(function () {

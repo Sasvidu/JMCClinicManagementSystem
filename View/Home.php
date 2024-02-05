@@ -29,7 +29,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
             <a class="navbar-brand" href="#">
-                <img class="logo" src="../../ECommerceSystem/Commons/Icons/logotest.png" alt="logo" width="50px" height="50px">
+                <img class="logo" src="../Commons/HMM.png" alt="logo" width="50px" height="50px">
             </a>
 
             <span class="navbar-brand-text">Jeevani Medical Center</span>

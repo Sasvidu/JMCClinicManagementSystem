@@ -46,6 +46,13 @@ function openDeleteModal(id) {
   });
 }
 
+function openPaymentInvoice(id) {
+  var fields = id.split("-");
+  var paymentId = fields[1];
+
+  window.open("PaymentInvoice.php?status=true&id=" + paymentId, "_blank");
+}
+
 function openPaymentModal(id) {
   $(document).ready(function () {
     //Extract the data of specific stock:

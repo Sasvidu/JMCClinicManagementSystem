@@ -1,2 +1,1 @@
-3. Make doctor and patient stuff (make appointment and manage patient data)
-4. Report gen
+All Done

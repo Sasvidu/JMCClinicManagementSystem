@@ -27,7 +27,8 @@
                 doctor_user.user_fname AS doctor_first_name,
                 patient_user.user_lname AS patient_last_name,
                 doctor_user.user_lname AS doctor_last_name,
-                patient_user.user_id AS patient_id
+                patient_user.user_id AS patient_id,
+                prescription.*
             FROM 
                 appointment
             JOIN 
@@ -38,6 +39,8 @@
                 user AS patient_user ON appointment.appointment_patient_id = patient_user.user_id
             JOIN 
                 user AS doctor_user ON doctor.doctor_user_id = doctor_user.user_id
+            LEFT JOIN 
+                prescription ON prescription.prescription_appointment_id = appointment.appointment_id       
             WHERE 
                 CONCAT(patient_user.user_fname, patient_user.user_lname, doctor_user.user_fname, doctor_user.user_lname, doctor.doctor_specialisation, appointment_time) LIKE '%$filters%'
             AND
@@ -61,7 +64,8 @@
                 doctor_user.user_fname AS doctor_first_name,
                 patient_user.user_lname AS patient_last_name,
                 doctor_user.user_lname AS doctor_last_name,
-                patient_user.user_id AS patient_id
+                patient_user.user_id AS patient_id,
+                prescription.*
             FROM 
                 appointment
             JOIN 
@@ -72,6 +76,8 @@
                 user AS patient_user ON appointment.appointment_patient_id = patient_user.user_id
             JOIN 
                 user AS doctor_user ON doctor.doctor_user_id = doctor_user.user_id
+            LEFT JOIN 
+                prescription ON prescription.prescription_appointment_id = appointment.appointment_id       
             WHERE 
                 CONCAT(patient_user.user_fname, patient_user.user_lname, doctor_user.user_fname, doctor_user.user_lname, doctor.doctor_specialisation, appointment_time) LIKE '%$filters%'
             AND
@@ -102,7 +108,8 @@
             doctor_user.user_fname AS doctor_first_name,
             patient_user.user_lname AS patient_last_name,
             doctor_user.user_lname AS doctor_last_name,
-            patient_user.user_id AS patient_id
+            patient_user.user_id AS patient_id,
+            prescription.*
         FROM 
             appointment
         JOIN 
@@ -113,6 +120,8 @@
             user AS patient_user ON appointment.appointment_patient_id = patient_user.user_id
         JOIN 
             user AS doctor_user ON doctor.doctor_user_id = doctor_user.user_id
+        LEFT JOIN 
+            prescription ON prescription.prescription_appointment_id = appointment.appointment_id       
         WHERE
             DATE(schedule.schedule_date) = '$date'
         AND

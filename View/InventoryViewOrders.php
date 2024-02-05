@@ -25,6 +25,7 @@ require_once "../Model/InventoryVIewOrdersInitializationModel.php";
     <link rel="stylesheet" type="text/css" href="../CSS/Utilities.css">
 
     <!--Link to Original Script -->
+    <script defer src="../JS/InventoryJS.js"></script>
 
     <!--Link to fontawesome icons -->
     <script src="https://kit.fontawesome.com/0c49cb8566.js" crossorigin="anonymous"></script>
@@ -306,7 +307,6 @@ require_once "../Model/InventoryVIewOrdersInitializationModel.php";
 
                                     <tbody>
 
-                                        <form action="InventoryOrderReport.php?status=true" method="post">
                                             <?php foreach ($orders as $order) { ?>
                                                 <tr>
                                                     <th scope="row"><?php echo $order['order_id'] ?></th>
@@ -317,11 +317,10 @@ require_once "../Model/InventoryVIewOrdersInitializationModel.php";
                                                     <td id="Payment<?php echo $order['order_id'] ?>"><?php echo $order['order_price'] ?></td>
                                                     <td id="PaymentMade<?php echo $order['order_id'] ?>"><?php echo $order['order_completed_payment'] ?></td>
                                                     <td>
-                                                        <button type="submit" formtarget="_blank" class="btn btn-sm btn-success" name="invoiceButton" id="invoice-<?php echo $order['order_id'] ?>" value="invoice-<?php echo $order['order_id'] ?>"><i class="fa-solid fa-file-invoice"></i>&nbsp;&nbsp;Receipt</button>
+                                                        <button type="submit" class="btn btn-sm btn-success" name="invoiceButton" id="invoice-<?php echo $order['order_id'] ?>" value="invoice-<?php echo $order['order_id'] ?>" onclick="openOrderInvoice(this.id)"><i class="fa-solid fa-file-invoice"></i>&nbsp;&nbsp;Receipt</button>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
-                                        </form>
 
                                     </tbody>
 
