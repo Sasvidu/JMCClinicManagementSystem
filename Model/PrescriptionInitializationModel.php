@@ -49,7 +49,7 @@
         AND 
             prescription_status=1 
         ORDER BY 
-            prescription_id ASC 
+            schedule_date DESC, prescription_id ASC 
         LIMIT 
             $start, $limit;";
 
@@ -76,7 +76,7 @@
         WHERE 
             prescription_status=1 
         ORDER BY 
-            prescription_id ASC 
+            schedule_date DESC, prescription_id ASC 
         LIMIT 
             $start, $limit;";
         $result = $myCon->query($sql) or die($myCon->error);

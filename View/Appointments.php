@@ -324,6 +324,7 @@ require_once "../Model/AppointmentInitializationModel.php";
 
         include_once "AppointmentAddAppointmentModal.php";
         include_once "AppointmentDeleteAppointmentModal.php";
+        include_once "PrescriptionAddPrescriptionModal.php"; 
 
     ?>
 

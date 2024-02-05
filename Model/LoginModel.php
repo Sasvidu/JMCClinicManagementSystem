@@ -78,7 +78,7 @@ function loginUser($con, $username, $password)
             header("location: ../View/ClerkDashboard.php");
         }else if ($userRole == 4) {
             $_SESSION["userRole"] = "Patient";
-            header("location: ../View/Dashboard.php");
+            header("location: ../View/PatientDashboard.php");
         }
 
     //If the passwords do not match:
