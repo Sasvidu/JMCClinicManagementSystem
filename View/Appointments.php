@@ -290,6 +290,11 @@ require_once "../Model/AppointmentInitializationModel.php";
                                                 <td id="appointmentDoctor<?php echo $appointment['appointment_id']; ?>"> <?php echo ($appointment['doctor_first_name'] . " " . $appointment['doctor_last_name'] . ", " . $appointment['doctor_specialisation']); ?></td>
                                                 <td id="appointmentPatient<?php echo $appointment['appointment_id']; ?>"> <?php echo ($appointment['patient_first_name'] . " " . $appointment['patient_last_name']); ?></td>
                                                 <td>
+                                                    <?php if ($appointment['appointment_prescription_status'] == 0) { ?>
+                                                        <button type="button" class="btn btn-sm btn-themed-primary btn-action" name="addPrescriptionButton" id="addPrescription<?php echo $appointment['appointment_id'] ?>" onclick="openAddPrescriptionModal(this.id)"><i class="fa-solid fa-prescription-bottle-medical"></i>&nbsp;Add Prescription</button>
+                                                    <?php } else { ?>
+                                                        <button type="button" class="btn btn-sm btn-success btn-action" name="viewPrescriptionButton" id="viewPrescription<?php echo $appointment['appointment_id'] ?>"><i class="fa-solid fa-file-lines"></i>&nbsp;View Prescription</button>
+                                                    <?php } ?>
                                                     <button type="button" class="btn btn-sm btn-themed-violet btn-action" name="medicalInfoButton" id="medicalInfo<?php echo $appointment['patient_id'] ?>" onclick="openMedicalInfoPage(this.id)"><i class="fa-solid fa-notes-medical"></i>&nbsp;Medical Info</button>
                                                     <button type="button" class="btn btn-sm btn-themed-danger btn-action" name="deleteButton" id="del<?php echo $appointment['appointment_id'] ?>" onclick="openDeleteModal(this.id)"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
                                                 </td>
