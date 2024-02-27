@@ -89,7 +89,7 @@ if ($_GET["status"] != "true") {
     $pdf->AddPage("P", "A5");
     $width = $pdf->GetPageWidth();
 
-    $pdf->SetTitle("Voucher #$prescriptionId");
+    $pdf->SetTitle("Prescription #$prescriptionId");
 
     $pdf->SetFont("Arial", "B", "20");
     $pdf->Image("../Commons/HMM.png", 10, 5, 30, 30);
